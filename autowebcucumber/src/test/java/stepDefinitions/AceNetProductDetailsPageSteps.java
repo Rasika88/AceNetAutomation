@@ -97,29 +97,8 @@ public class AceNetProductDetailsPageSteps {
 		log.error("Shipping method not selected");
 		}
 	}
-	@Then("^Checkout to place an order \"([^\"]*)\"$")
-	public void Checkout_to_place_an_order(String shipping Method)
-	{
-		if(shippingMethod.equalsIgnoreCase("RSC Pickup"))
-	{
-	artical.expressCheckOutSTRClick();
-	artical.OrderCheckout(shippingMethod);
-	}
-	else if(shippingMethod.equalsIgnoreCase("Stock Reserve"))
-	{
-		artical.expressCheckOutSTRClick();
-		artical.OrderCheckout(shippingMethod);
-	}
-	else if(shippingMethod.equalsIgnoreCase("Ship to Retailer"))
-	{
-		artical.expressCheckOutSTRClick();		
-		artical.checkOutShipToRetailor();
-	}
-	else{
-	log.error("Shipping method not selected");
-	}
-		
-	}
+	
+
 
 	@Then("^User confirms Article Dettails$")
 	public void userConfirmArticleDetails() throws  Throwable {

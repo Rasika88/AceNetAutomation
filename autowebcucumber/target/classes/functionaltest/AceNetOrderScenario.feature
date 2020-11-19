@@ -74,7 +74,7 @@ Then User enters the shipping method and order qty in product details page "<shi
 Then Checkout to place an order "<shippingMethod>"
 Then Click on View shipping option from different RSC
 Then Remove the selected RSC and select different RSC using recalculate approach
-And  Confirm Orders has been placed
+
 Examples:
 |  SearchCategory   |shippingMethod  |orderQty|verifySearchCategory|
 |3037405            |Ship to Retailer|1       |3037405|
