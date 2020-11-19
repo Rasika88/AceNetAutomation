@@ -1,0 +1,14 @@
+01:54:17.517 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+01:54:18.039 [main] INFO  AcenetHomePageSteps - Select the Store.
+01:54:18.040 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+01:54:33.992 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+01:54:34.368 [main] INFO  AcenetHomePageSteps - Select the Store.
+01:54:34.368 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+01:54:50.275 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+01:54:50.666 [main] INFO  AcenetHomePageSteps - Select the Store.
+01:54:50.666 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+01:58:18.828 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+01:58:19.255 [main] INFO  AcenetHomePageSteps - Select the Store.
+01:58:19.255 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+02:02:27.974 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+02:02:28.435 [main] INFO  AcenetHomePageSteps - Select the Store.

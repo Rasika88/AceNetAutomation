@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: Scenario: AcenetOrderPlacementSTH
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 4, Skipped: 2, Time elapsed: 21.086 s <<< FAILURE! - in Scenario: AcenetOrderPlacementSTH
+Then User Navigates to the store(Scenario: AcenetOrderPlacementSTH)  Time elapsed: 0.006 s  <<< ERROR!
+org.openqa.selenium.NoSuchFrameException: 
+no such frame
+  (Session info: chrome=84.0.4147.105)
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'QAAUTOMATION4', ip: '172.24.36.33', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\srama\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56184}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:virtualAuthenticators: true}
+Session ID: f339b04c1ed2bc558085e6f3c955ff8f
+
+Scenario: AcenetOrderPlacementSTH  Time elapsed: 0 s  <<< ERROR!
+org.openqa.selenium.NoSuchFrameException: 
+no such frame
+  (Session info: chrome=84.0.4147.105)
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'QAAUTOMATION4', ip: '172.24.36.33', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\srama\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56184}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:virtualAuthenticators: true}
+Session ID: f339b04c1ed2bc558085e6f3c955ff8f
+
+Then User enters the search Category(Scenario: AcenetOrderPlacementSTH)  Time elapsed: 0.001 s  <<< ERROR!
+cucumber.api.PendingException: TODO: implement me
+
+Scenario: AcenetOrderPlacementSTH  Time elapsed: 0 s  <<< ERROR!
+cucumber.api.PendingException: TODO: implement me
+

@@ -1,0 +1,16 @@
+06:23:35.657 [main] INFO  LogsTest - Logged in to first store
+06:23:35.771 [main] DEBUG LogsTest - Confirmed login
+06:23:36.726 [main] INFO  AcenetHomePageSteps - Enter search article
+06:23:37.310 [main] DEBUG LogsTest - inside PDP
+06:23:37.366 [main] INFO  LogsTest - Title : Pages - Home
+06:23:37.367 [main] INFO  LogsTest - AceNet QA is Logged in
+06:23:37.371 [main] INFO  LogsTest - CDwindow-3117C849BA9C82589762C015D4330FD41
+06:23:37.380 [main] INFO  LogsTest - [CDwindow-3117C849BA9C82589762C015D4330FD4, CDwindow-958752F6545A8E18DF1A14070E5F39BE]2
+06:23:38.512 [main] INFO  LogsTest - Title : ACENET - Item Details
+06:23:48.647 [main] INFO  LogsTest - switched to iframe
+06:23:49.064 [main] INFO  LogsTest - Select Ship to Customer Option
+06:23:49.570 [main] INFO  LogsTest - Order qty method
+06:23:49.570 [main] INFO  LogsTest - set order qty method
+06:23:50.612 [main] INFO  LogsTest - pop up
+06:23:50.612 [main] INFO  LogsTest - Express check out method
+06:23:54.360 [main] INFO  LogsTest - Express check button click

@@ -1,0 +1,16 @@
+05:46:40.126 [main] INFO  AcenetHomePageSteps - Enter search article
+05:46:40.729 [main] DEBUG LogsTest - inside PDP
+05:46:40.771 [main] INFO  LogsTest - Title : Pages - Home
+05:46:40.771 [main] INFO  LogsTest - AceNet QA is Logged in
+05:46:40.776 [main] INFO  LogsTest - CDwindow-0318F0C38C4865E4802EEE7A0C0F862D1
+05:46:40.785 [main] INFO  LogsTest - [CDwindow-0318F0C38C4865E4802EEE7A0C0F862D, CDwindow-98C483EE44944BF3AC3DB95212EFE0ED]2
+05:46:41.884 [main] INFO  LogsTest - Title : ACENET - Item Details
+05:46:52.008 [main] INFO  LogsTest - switched to iframe
+05:46:52.478 [main] INFO  LogsTest - RSC Quantity of the article is 552
+05:46:52.479 [main] INFO  LogsTest - Order qty method
+05:46:52.681 [main] INFO  LogsTest - Order qty entered
+05:46:53.407 [main] INFO  LogsTest - pop up
+05:46:53.408 [main] INFO  LogsTest - Express check out method
+05:46:53.826 [main] INFO  LogsTest - Express check button click
+05:46:55.484 [main] INFO  LogsTest - Express check out confirmation
+05:46:55.874 [main] INFO  LogsTest - Order confirmation method

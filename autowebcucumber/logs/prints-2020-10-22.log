@@ -1,0 +1,15 @@
+06:06:21.221 [main] INFO  LogsTest - switched to iframe
+06:16:27.171 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+06:16:27.553 [main] INFO  AcenetHomePageSteps - Select the Store.
+06:16:27.553 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+06:16:37.608 [main] DEBUG LogsTest - 0
+06:16:37.837 [main] INFO  LogsTest - Logged in to first store
+06:16:37.905 [main] DEBUG LogsTest - Store selected and confirmed login
+06:16:37.905 [main] ERROR LogsTest - Store not selected successfully
+06:16:38.715 [main] INFO  AcenetHomePageSteps - Search an article
+06:16:39.234 [main] DEBUG LogsTest - inside PDP
+06:16:39.316 [main] INFO  LogsTest - Title : Home
+06:16:39.316 [main] ERROR LogsTest - AceNet QA is not Logged in
+06:16:39.322 [main] INFO  LogsTest - CDwindow-C804D5B83D337263E1F9062B0735E22E1
+06:16:39.332 [main] INFO  LogsTest - [CDwindow-C804D5B83D337263E1F9062B0735E22E, CDwindow-D92B19EC6ABC29C13CE5CA865FE60CC0]2
+06:16:40.422 [main] INFO  LogsTest - Title : ACENET - Item Details

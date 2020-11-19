@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Scenario: AcenetArticleDetails" time="20.899" tests="7" errors="2" skipped="3" failures="0">
+  <properties>
+    <property name="java.specification.version" value="14"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\AceHardware\Eclipse\eclipse-java-2020-09-R-win32-x86_64\eclipse\plugins\org.eclipse.m2e.maven.runtime_1.16.0.20200610-1735\jars\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Chicago"/>
+    <property name="java.vm.specification.version" value="14"/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-14.0.2\bin"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="maven.home" value="C:\AceHardware\OSAF_Acenet\autowebcucumber\autowebcucumber\EMBEDDED"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\srama"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-07-14"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-14.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="14.0.2+12-46"/>
+    <property name="user.name" value="srama"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="6.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\srama\AppData\Local\Temp\"/>
+    <property name="java.version" value="14.0.2"/>
+    <property name="user.dir" value="C:\AceHardware\OSAF_Acenet\autowebcucumber\autowebcucumber"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\AceHardware\OSAF_Acenet\autowebcucumber\autowebcucumber"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-14.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk-14.0.2/bin/server;C:/Program Files/Java/jdk-14.0.2/bin;C:\Program Files\Java\jdk-14.0.2\bin;C:\apache-maven-3.6.3\bin;C:\AceHardware\Eclipse\eclipse-java-2020-09-R-win32-x86_64\eclipse;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="14.0.2+12-46"/>
+    <property name="classworlds.conf" value="C:\Users\srama\eclipse-workspace\OSAF_Enhancement1\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf13204705860878973792.tmp"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="58.0"/>
+  </properties>
+  <testcase name="Scenario: AcenetArticleDetails" classname="Scenario: AcenetArticleDetails" time="0"/>
+  <testcase name="Scenario: AcenetArticleDetails" classname="Scenario: AcenetArticleDetails" time="0">
+    <error message="no such frame&#10;  (Session info: chrome=84.0.4147.105)&#10;Build info: version: &apos;3.9.1&apos;, revision: &apos;63f7b50&apos;, time: &apos;2018-02-07T22:25:02.294Z&apos;&#10;System info: host: &apos;QAAUTOMATION4&apos;, ip: &apos;172.24.36.33&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;14.0.2&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\srama\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56185}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:virtualAuthenticators: true}&#10;Session ID: 5a51f6277d384ba2c9446c621c7791af" type="org.openqa.selenium.NoSuchFrameException">org.openqa.selenium.NoSuchFrameException: 
+no such frame
+  (Session info: chrome=84.0.4147.105)
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'QAAUTOMATION4', ip: '172.24.36.33', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\srama\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56185}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:virtualAuthenticators: true}
+Session ID: 5a51f6277d384ba2c9446c621c7791af
+</error>
+  </testcase>
+  <testcase name="Given user is on AceNet Home Page" classname="Scenario: AcenetArticleDetails" time="0.002"/>
+  <testcase name="Then User Navigates to the store" classname="Scenario: AcenetArticleDetails" time="0.005">
+    <error message="no such frame&#10;  (Session info: chrome=84.0.4147.105)&#10;Build info: version: &apos;3.9.1&apos;, revision: &apos;63f7b50&apos;, time: &apos;2018-02-07T22:25:02.294Z&apos;&#10;System info: host: &apos;QAAUTOMATION4&apos;, ip: &apos;172.24.36.33&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;14.0.2&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\srama\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56185}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:virtualAuthenticators: true}&#10;Session ID: 5a51f6277d384ba2c9446c621c7791af" type="org.openqa.selenium.NoSuchFrameException">org.openqa.selenium.NoSuchFrameException: 
+no such frame
+  (Session info: chrome=84.0.4147.105)
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'QAAUTOMATION4', ip: '172.24.36.33', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\srama\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56185}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:virtualAuthenticators: true}
+Session ID: 5a51f6277d384ba2c9446c621c7791af
+</error>
+  </testcase>
+  <testcase name="Then User enters the search Category &quot;hammer&quot;" classname="Scenario: AcenetArticleDetails" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="Then User click Select RSC quantity check box" classname="Scenario: AcenetArticleDetails" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="And Confirm the RSC quantity displayed" classname="Scenario: AcenetArticleDetails" time="0">
+    <skipped/>
+  </testcase>
+</testsuite>

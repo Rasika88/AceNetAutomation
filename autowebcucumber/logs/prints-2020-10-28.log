@@ -1,0 +1,14 @@
+00:08:36.363 [main] ERROR LogsTest - list of products available without Show RSC Qty
+00:48:46.340 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+00:48:46.724 [main] INFO  AcenetHomePageSteps - Select the Store.
+00:48:46.724 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+00:48:56.742 [main] DEBUG LogsTest - 0
+00:48:56.976 [main] INFO  LogsTest - Logged in to first store
+00:48:57.045 [main] DEBUG LogsTest - Store selected and confirmed login
+00:48:57.045 [main] ERROR LogsTest - Store not selected successfully
+00:49:29.644 [main] INFO  AcenetHomePageSteps - Search an article
+00:50:14.026 [main] INFO  LogsTest - switched to iframe
+00:51:24.135 [main] INFO  LogsTest - list of products available with Show RSC Qty available
+00:51:38.116 [main] ERROR LogsTest - list of products available without Show RSC Qty
+00:53:41.858 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+00:53:42.249 [main] INFO  AcenetHomePageSteps - Select the Store.

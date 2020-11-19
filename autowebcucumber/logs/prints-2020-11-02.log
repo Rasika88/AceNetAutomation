@@ -1,0 +1,15 @@
+08:39:04.224 [main] ERROR LogsTest - Store not selected successfully
+08:39:06.117 [main] INFO  AcenetHomePageSteps - Search an article
+08:39:16.659 [main] INFO  LogsTest - switched to iframe
+08:43:46.086 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+08:43:48.841 [main] INFO  AcenetHomePageSteps - Select the Store.
+08:43:48.841 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+08:43:59.759 [main] DEBUG LogsTest - 0
+08:44:00.498 [main] INFO  LogsTest - Logged in to first store
+08:44:00.575 [main] DEBUG LogsTest - Store selected and confirmed login
+08:44:00.576 [main] ERROR LogsTest - Store not selected successfully
+08:44:02.564 [main] INFO  AcenetHomePageSteps - Search an article
+08:44:13.219 [main] INFO  LogsTest - switched to iframe
+08:59:04.123 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+08:59:04.519 [main] INFO  AcenetHomePageSteps - Select the Store.
+08:59:04.519 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page

@@ -1,0 +1,52 @@
+[
+{
+	"apiIdentifier":"Get List of Public Photos",
+	"apiUri":"https://api.unsplash.com/photos/?client_id=a25ae17d33485d92a7dd6f1f07b911e73fa72f286e7ac21e2afad7b2a5244cb4",
+	"method":"GET",
+	"headerContent":{
+	
+	},
+	"bodyContent":{
+	
+	},
+	"expectedResponseCode":"200"
+},
+{
+	"apiIdentifier":"Add Photo to Existing Collection",
+	"apiUri":"https://api.unsplash.com/collections/4411046/add",
+	"method":"POST",
+	"headerContent":{
+	 "Content-Type": "application/json",
+	 "Authorization":"Bearer f2b6d66a53d8da609188433fd40274de3e60720f2a74d818948d3ed4b28b622f"
+	},
+	"bodyContent":{
+	"photo_id":"sScmok4Iq1o"
+	},
+	"expectedResponseCode":"201"
+},
+{
+	"apiIdentifier":"Get User Details",
+	"apiUri":"https://reqres.in/api/users?page=2",
+	"method":"GET",
+	"headerContent":{
+	},
+	"bodyContent":{
+	
+	},
+	"expectedResponseCode":"200"
+},
+{
+	"apiIdentifier":"Update User Details",
+	"apiUri":"https://reqres.in/api/users/2",
+	"method":"PUT",
+	"headerContent":{
+	 "Content-Type": "application/json"
+	},
+	"bodyContent":{
+	"name": "morpheus",
+    "job": "leader"
+	},
+	"expectedResponseCode":"200"
+}
+
+]

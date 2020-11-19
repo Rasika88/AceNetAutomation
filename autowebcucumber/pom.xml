@@ -1,0 +1,475 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>autoweb</groupId>
+  <artifactId>autowebcucumber</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>autowebcucumber</name>
+  <url>http://maven.apache.org</url>
+     <repositories>
+        <repository>
+            <id>atlassian-public1</id>
+            <url>https://maven.atlassian.com/repository/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>atlassian-public2</id>
+            <url>https://m2proxy.atlassian.com/repository/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>atlassian-public3</id>
+            <url>https://maven.atlassian.com/content/groups/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </repository>
+       
+	<!-- Added for report portal -->  
+          <repository>
+        <snapshots>
+          <enabled>false</enabled>
+        </snapshots>
+        <id>bintray-epam-reportportal</id>
+        <name>bintray</name>
+        <url>http://dl.bintray.com/epam/reportportal</url>
+     </repository>
+        
+    </repositories>
+
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+       
+    </dependency>
+    
+    <dependency>
+	    <groupId>info.cukes</groupId>
+	    <artifactId>cucumber-picocontainer</artifactId>
+	    <version>1.2.5</version>
+	     
+	</dependency>
+	
+	<dependency>
+    <groupId>com.vimalselvam</groupId>
+    <artifactId>cucumber-extentsreport</artifactId>
+    <version>3.0.2</version>
+</dependency>
+	
+	<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>3.1.1</version>
+</dependency>
+    
+    <dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>1.2.5</version>
+</dependency>
+
+<dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-jvm-deps</artifactId>
+    <version>1.0.5</version>
+    <scope>provided</scope>
+</dependency>
+
+    <dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>1.2.5</version>
+     
+</dependency>
+    
+    <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.9.1</version>
+</dependency>
+        <dependency>
+            <groupId>com.atlassian.jira</groupId>
+            <artifactId>jira-rest-java-client-core</artifactId>
+            <version>2.0.0-m30</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.atlassian.connect</groupId>
+            <artifactId>ac-play-java_2.10</artifactId>
+            <version>0.10.1</version>
+            <exclusions>
+                <!--
+                <exclusion>
+                    <groupId>com.atlassian.fugue</groupId>
+                    <artifactId>fugue</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.atlassian.jwt</groupId>
+                    <artifactId>jwt-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.atlassian.jwt</groupId>
+                    <artifactId>jwt-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>net.oauth.core</groupId>
+                    <artifactId>oauth</artifactId>
+                </exclusion>
+-->
+                <exclusion>
+                    <groupId>com.typesafe.play</groupId>
+                    <artifactId>filters-helpers_2.10</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.typesafe.play</groupId>
+                    <artifactId>play-cache_2.10</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.typesafe.play</groupId>
+                    <artifactId>play-java-jdbc_2.10</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.typesafe.play</groupId>
+                    <artifactId>play-java-jpa_2.10</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.typesafe.play</groupId>
+                    <artifactId>play-java_2.10</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.typesafe.play</groupId>
+                    <artifactId>play_2.10</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-codec</groupId>
+                    <artifactId>commons-codec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcprov-jdk16</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-entitymanager</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.scala-lang</groupId>
+                    <artifactId>scala-library</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.typesafe.play</groupId>
+                    <artifactId>play-test_2.10</artifactId>
+                </exclusion>
+
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-all</artifactId>
+                </exclusion>
+
+                <exclusion>
+                    <groupId>org.mockito</groupId>
+                    <artifactId>mockito-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.19</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>1.7.19</version>
+                   </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20140107</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.7.0</version>
+</dependency>
+
+
+
+<!-- Added for report portal -->  
+<!-- <dependency>
+  <groupId>com.epam.reportportal</groupId>
+  <artifactId>agent-java-cucumber</artifactId>
+  <version>4.0.0</version>
+</dependency> -->
+
+<!-- 
+ <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>client-java</artifactId>
+            <version>[4.0.0,)</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>commons-model</artifactId>
+            <version>[4.0.0,)</version>
+        </dependency> -->
+
+
+<dependency>
+    <groupId>com.epam.reportportal</groupId>
+    <artifactId>commons-model</artifactId>
+    <version>4.2.0</version>
+</dependency>
+
+<dependency>
+    <groupId>com.epam.reportportal</groupId>
+    <artifactId>client-java</artifactId>
+    <version>4.0.10</version>
+</dependency> 
+	<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml-schemas</artifactId>
+    <version>4.1.2</version>
+</dependency>
+
+		
+	<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
+<dependency>
+    <groupId>net.sourceforge.jexcelapi</groupId>
+    <artifactId>jxl</artifactId>
+    <version>2.6.12</version>
+</dependency>
+		
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>4.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+ <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.13.3</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.13.3</version>
+  </dependency>
+
+<!-- Added for API Testing -->
+   <dependency>
+	    <groupId>com.googlecode.json-simple</groupId>
+	    <artifactId>json-simple</artifactId>
+	    <version>1.1.1</version>
+		</dependency>
+		<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>5.5.0</version>
+</dependency>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>5.5.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>4.2.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.11.2</version>
+</dependency>
+  </dependencies>
+  	
+  	<build>
+  	<resources>
+  	<resource>
+  	<directory>src/test/resources</directory>
+  	<filtering>true</filtering>
+  	 	</resource>
+  	</resources>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+				<configuration>
+					<parallel>classes</parallel>
+					<forkCount>3</forkCount>
+					<reuseForks>true</reuseForks>
+					<threadCount>2</threadCount>
+					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>	
+					<includes>
+						<include>Parallel**IT.class</include>
+					</includes>	
+				</configuration>
+			</plugin>
+
+	
+ 		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<compilerVersion>1.8</compilerVersion>
+					<source>1.8</source>
+					<target>1.8</target>
+					<fork>true</fork>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin> 
+		<!-- Added for Parallel Execution -->
+			<plugin>
+				<groupId>com.github.temyers</groupId>
+				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
+				<version>5.0.0</version>
+				<executions>
+					<execution>
+						<id>generateRunners</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>generateRunners</goal>
+						</goals>
+						<configuration>
+							<glue>stepDefinitions</glue>
+							<!-- To be changed as per the current directory -->
+							<outputDirectory>target/generated-test-sources/cucumber</outputDirectory>
+							<featuresDirectory>src/test/resources</featuresDirectory>
+							<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+							<plugins>
+								<plugin>
+									<name>com.cucumber.listener.ExtentCucumberFormatter</name>
+									<extension>html</extension>
+								</plugin>
+							</plugins>
+							<strict>true</strict>
+							<monochrome>true</monochrome>
+							<!-- <tags>"@ValidateProductDetails"</tags> -->
+							<filterFeaturesByTags>true</filterFeaturesByTags>
+							<namingScheme>pattern</namingScheme>
+							<namingPattern>Parallel{f}IT</namingPattern>
+							<parallelScheme>SCENARIO</parallelScheme>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+					
+
+		</plugins>
+	</build>
+  	
+  	
+</project>

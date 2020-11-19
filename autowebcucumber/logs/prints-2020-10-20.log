@@ -1,0 +1,16 @@
+05:39:57.607 [main] INFO  LogsTest - Express check out confirmation
+05:39:57.985 [main] INFO  LogsTest - Order confirmation method
+05:39:58.091 [main] INFO  LogsTest - Confirm the details
+05:46:17.312 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+05:46:17.702 [main] INFO  AcenetHomePageSteps - Select the Store.
+05:46:17.702 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+05:46:27.721 [main] DEBUG LogsTest - 0
+05:46:29.258 [main] INFO  LogsTest - Logged in to first store
+05:46:29.336 [main] DEBUG LogsTest - Store selected and confirmed login
+05:46:29.336 [main] ERROR LogsTest - Store not selected successfully
+05:46:30.233 [main] INFO  AcenetHomePageSteps - Enter search article
+05:46:30.736 [main] DEBUG LogsTest - inside PDP
+05:46:30.801 [main] INFO  LogsTest - Title : Home
+05:46:30.802 [main] ERROR LogsTest - AceNet QA is not Logged in
+05:46:30.806 [main] INFO  LogsTest - CDwindow-47BDBE4349DB3541586917489BDE2B4B1
+05:46:30.815 [main] INFO  LogsTest - [CDwindow-47BDBE4349DB3541586917489BDE2B4B, CDwindow-88FD9CC8AC8D2A2ACDBBADB910FC517E]2
