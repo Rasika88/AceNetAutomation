@@ -1,0 +1,15 @@
+23:43:12.477 [main] INFO  LogsTest - Title : Pages - Home
+23:43:12.498 [main] INFO  LogsTest - AceNet QA is Logged in
+23:43:12.504 [main] INFO  LogsTest - CDwindow-B811925AD5ECA567C6C836CFA8C2F38D1
+23:43:12.513 [main] INFO  LogsTest - [CDwindow-B811925AD5ECA567C6C836CFA8C2F38D, CDwindow-865D8C563D78F325F641FBDC91AFA5DE]2
+23:43:13.916 [main] INFO  LogsTest - Verify artical detail page Title : ACENET - Item Details
+23:43:24.040 [main] INFO  LogsTest - switched to iframe
+23:43:40.759 [main] INFO  LogsTest - switched to iframe
+23:47:24.626 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+23:47:25.017 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:47:30.020 [main] INFO  LogsTest - Select store
+23:47:35.557 [main] INFO  LogsTest - Search with Article
+23:47:35.809 [main] INFO  LogsTest - Click on Search button with Article
+23:47:36.840 [main] DEBUG LogsTest - inside PDP
+23:47:36.908 [main] INFO  LogsTest - Title : Pages - Home
+23:47:36.908 [main] INFO  LogsTest - AceNet QA is Logged in

@@ -9,6 +9,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.appender.db.jdbc.DriverManagerConnectionSource;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,13 +21,23 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import CommonMethods.AcenetCommonMethods;
 import dataProvider.ConfigFileReader;
+import selenium.Wait;
+import utils.ScreenshotCapture;
 
 public class AcenetArticleDeatilsPage {
 	WebDriver driver;
 	Logger log=LogManager.getLogger("LogsTest");
-	ConfigFileReader configOb =new ConfigFileReader();
 
+	ConfigFileReader configOb =new ConfigFileReader();
+	AcenetCommonMethods Cm =new AcenetCommonMethods();
+
+	// Initializing driver
+	public AcenetArticleDeatilsPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
 	@FindBy(xpath="//div[@id='leftRscInfo']")
 	WebElement RSCLocation;
@@ -36,25 +49,36 @@ public class AcenetArticleDeatilsPage {
 	WebElement comment;
 	@FindBy(xpath = "//*[@id='divErrorInfo']/div[1]/div[1]/div[2]/a/img")
 	WebElement popUPcloseBttn;
-	@FindBy(xpath = "//div[@id='dd']")
+	@FindBy(xpath = "//*[@id='dd']")
 	WebElement dropDown;
+
 	@FindBy(xpath = "//div[@id='dd']")
 	WebElement selectShipingMethod;
 	@FindBy(xpath = "//a[contains(text(),'Ship to Retailer')]")
 	WebElement shipToRetailer;
+	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_lstShipMethod']/li[3]/a")
+	WebElement shipToCustomer;
 	@FindBy(xpath = "//a[contains(text(),'RSC Pickup')]")
 	WebElement rSCPickup; 
 	@FindBy(xpath = "//a[contains(text(),'Stock Reserve')]")
 	WebElement stockReserve_dropdown;
+	@FindBy(xpath = "//a[contains(text(),'Dropship')]")
+	WebElement dropShip_dropdown;
+	@FindBy(xpath = "//a[contains(text(),'Stock Reserve Backorder')]")
+	WebElement stockReserveBackorder_dropdown;
+	@FindBy(xpath = "//a[contains(text(),'Customer Priority Order')]")
+	WebElement customerPriorityorder_dropdown;
+	//*[@id="ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_lstShipMethod"]/li[5]/a
 	@FindBy(xpath ="//input[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_txtComments']")
 	WebElement addComment;
-	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_btnExpressCheckout']")
-
+	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_btnExpressCheckout']")	
 	WebElement expressCheckout;
+	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_sellingData_lblRscQty']")
+	WebElement rscQtycheck_ItemDeatilsPage;
+	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_txtCustomerName']")
+	WebElement customerName_CustPriority;
 	@FindBy(xpath = "//input[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnCheckout']")
 	WebElement checkOut;
-
-
 	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_sellingData_divRscQty']/span[1]")
 	WebElement RSCquantity;
 	@FindBy(xpath = "//div[@id='MainContentPlaceHolder_divRscQtyCheckBox']")
@@ -110,18 +134,24 @@ public class AcenetArticleDeatilsPage {
 	@FindBy(xpath="//*[@id='divQty_1']")
 	WebElement addQty2;
 	@FindBy(xpath="//*[@id='btnClose']")
-	WebElement closeBasket_popup;
-
+	WebElement closeBasket_popup;	
 	@FindBy(xpath="//*[@id='btnCheckout']")
 	WebElement checkout;
+
+	@FindBy(xpath="//*[@id='btnCheckOut']")
+	WebElement stockReservedBackorder_checkout;
+	@FindBy(xpath="//*[@id='lblExtDesc']")
+	WebElement checkoutPageVerification;
+	@FindBy(xpath="//*[@id='Qty_55755_021244-024']")
+	WebElement eventPlannerSkuSelection;
+	@FindBy(xpath="//*[@id='divGridToolbarContent']/div[1]/div/div[4]/span/span")
+	WebElement eventPlannerView_Dropdown;
 	@FindBy(xpath="//*[@id='btnOrdExpress']")
 	WebElement expressCheckout_basket;
 	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_radGridShoppingBasket_ctl00_ctl02_ctl01_SelectRowSelectCheckBox']")
 	WebElement selectAll_checkbox;
 	@FindBy(xpath="//*[contains(text(),'Automate8')]")
-	WebElement selectBasket;
-	@FindBy(id= "tbxSearchBox")
-	WebElement searchTextBox;
+	WebElement selectBasket;	
 	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnCheckout']")
 	WebElement checkout_ShipToRetailer;
 	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_lblSuccessMsg']")
@@ -138,10 +168,15 @@ public class AcenetArticleDeatilsPage {
 	WebElement shippingAddressZip;
 	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_txtPhone']")
 	WebElement shippingAddressPhone;
+	@FindBy(xpath="//*[@id='divErrorInfoClose']")
+	WebElement phone_popup;
 	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_txtLookUp']")
 	WebElement AceRewards;
 	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnValidate']")
 	WebElement validate;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnContinue']")
+	WebElement continue_Button;
+
 	@FindBy(xpath="//*[@id='txtCustName']")
 	WebElement rSCPickupName;
 	@FindBy(xpath="//*[@id='txtPickUpPerson']")
@@ -152,25 +187,126 @@ public class AcenetArticleDeatilsPage {
 	WebElement rSCPickupTime;
 	@FindBy(xpath="//*[@id='btnPickOrder']")
 	WebElement rSCPickupOrder;
+	@FindBy(xpath="//*[@id='btnExpCheckOut1']")
+	WebElement expCheckOut;
+	@FindBy(xpath="//*[@id='btnExpCheckOut1']")//*[@id='divConfirmFreight']/div[2]/input[2]")
+	WebElement dropship_continueChkout;//*[@id="btnExpCheckOut2"]
+	@FindBy(xpath="//*[@id='btnCreateBasket']")
+	WebElement createNewBasket_Button;
+	@FindBy(xpath="//*[@id='txtBasketRefID']")
+	WebElement basketName;
+	@FindBy(xpath="//*[@id='ddlShipMethod']")
+	WebElement shipMethod;
+	@FindBy(xpath="//*[@id='ddlShipMethod']/option[4]")
+	WebElement shipMethod_RSCSelection;
+	@FindBy(xpath="//*[@id='ddlShipMethod']/option[2]")
+	WebElement shipMethod_ShipToRetailer;
+	@FindBy(xpath="//*[@id='ddlShipMethod']/option[3]")
+	WebElement shipMethod_ShipToCustomer;
+	@FindBy(xpath="//*[@id='txtNameBasket']")
+	WebElement custName;
+	@FindBy(xpath="//*[@id='txtPhoneBasket']")
+	WebElement custPh;
+	@FindBy(xpath="//*[@id='txtMailBasket']")
+	WebElement custEmail;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_ctl00_contentMainPlaceHolder_MainContent_MainContent_btnCreateNewBasket']")
+	WebElement basketCreate;
+	@FindBy(xpath="//*[@id='btnOK']")
+	WebElement dropshipOK_Button;
+	@FindBy(xpath="//*[@id='divConfirmFreight']/div[2]/input[2]")
+	WebElement dropshipContinue;
 	@FindBy(xpath="//*[@id='divErrContent']")
 	WebElement pastDateCheck;
 	@FindBy(xpath="//*[@id='divErrorPopUpClose']")
 	WebElement closePopup;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_otherRSCs']")
+	WebElement differentRSCLink;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_rptCheckout_ctl00_datalstContainer_ctl00_txtOrderQty']")
+	WebElement removevalue;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnRecalculate1']")
+	WebElement recalculate_btn;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_rptCheckout_ctl00_datalstContainer_ctl01_txtOrderQty']")
+	WebElement newRSCvalue;
+	@FindBy(xpath="//*[@id='divSearchPageHeader']/span[1]")
+	WebElement verifySearch;
+	// Need to move to Product management class
+	@FindBy(xpath="(//*[contains(text(),'Manage Product')])[2]")
+	WebElement manageProduct_Tab;
+	@FindBy(xpath="(//*[contains(text(),'Browse Product & Vendor')])[2]")
+	WebElement browseProductVendor_Tab;
+	@FindBy(xpath="(//*[contains(text(),'Event Planner')])[2]")
+	WebElement EventPlanner_Subtab;
 
+	@FindBy(xpath="//*[@id='contentMainPlaceHolder_quickListPages_lstOther_spanOther_5']/a")
+	WebElement vendorCatagorySelection;
+	@FindBy(xpath="//*[@id='divEvt']/span[2]/span/span[1]")
+	WebElement eventCatogory;
+	//@FindBy(xpath="(//span[contains(text(),'PROMO/RETAIL EXEC')])[1]")
+	@FindBy(xpath="//*[@id='ddlEvents_listbox']/li[4]")
+	WebElement eventCatry;
+	@FindBy(xpath="//*[@id='btnGo']")
+	WebElement eventPlanner_gobutton;
 
+	@FindBy(xpath="//*[@id='MainContentPlaceHolder_VendorFilterOptions_rdnBtnsVenType_0']")
+	WebElement vendorTypeFilter;
+	@FindBy(xpath="//*[@id='divCharOption_14']")
+	WebElement vendorFilter;//*[@id="divCharOption_14"]
+	@FindBy(xpath="//*[contains(text(),'1C - CLEANING SUPPLIES')]")
+	WebElement vendorDeptFilter;
+	@FindBy(xpath="//*[@id='htmlBtnApplyFilters']")
+	WebElement vedorApplyFilter;
+	@FindBy(xpath="//*[@id='hyp_SrchDsAceNetDir_68134']")
+	WebElement vendorOrderingOption_click;
+	@FindBy(xpath="(//*[contains(text(),'1182237')])[2]")
+	WebElement select_vendorSku;
+	@FindBy(xpath="(//*[contains(text(),'Discovery Assortment Planner')])[2]")
+	WebElement discoveryAssortmentPlanner_SubTab;
+	@FindBy(xpath="//*[contains(text(),'by Merch Class')]")
+	WebElement bymerchClass;
+	@FindBy(xpath="//*[@id='contentMainPlaceHolder_DiscoveryMaster_lstDepartment_lnkDepartment_0']")
+	WebElement merchDept;	
+	@FindBy(xpath="(//*[contains(text(),'100 - Floor Care')])[1]")
+	WebElement merchClass;
+	@FindBy(xpath="//*[@id='contentMainPlaceHolder_DiscoveryMaster_lstPG_lnkPG_0']")
+	WebElement merchPG;
+	@FindBy(xpath="//*[@id='btnApplyPONumber']")
+	WebElement applyPO;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_DiscoveryMaster_DiscoTelerikGrid_telerikDiscoRadGrid_ctl00_ctl04_TXT_OrderQty']")
+	WebElement merchOrderQty;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_ctl00_contentMainPlaceHolder_MainContent_spnDiscoveryCart']")
+	WebElement discoveryCart;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_ctl00_contentMainPlaceHolder_MainContent_spnEPCart']")
+	WebElement eventPlannerCart;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_rgShoppingCartDetails_ctl00_ctl06_SOASelectCartSelectCheckBox']")
+	WebElement DiscoverySelectedSku_Checkout;
+	@FindBy(xpath="//*[@id='contentMainPlaceHolder_MainContent_btnCancel']")
+	WebElement Discovery_Checkout_button;
+	@FindBy(xpath="//*[@id='ctl00_MainContent_radGridShoppingCart_ctl00']/tbody/tr[2]/td[4]/a")
+	WebElement discoveryBasketSelection;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnCheckOut']")
+	WebElement eventPlannerCheckut;//*[@id="btnExpCheckOut2"]
+	@FindBy(xpath="//*[contains(text(),'PROMO/RETAIL EXEC - OUTDOOR DECOR')]")
+	WebElement eventPlannerBasketSelection;
 
-	// Initializing driver
-	public AcenetArticleDeatilsPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
+	@FindBy(xpath="//*[@id='MainContent_txtSKUSearch']")
+	WebElement DiscoveryTab_SkuSearch;
+	@FindBy(xpath="//*[contains(text(),'10051')]")
+	WebElement discoverySku;
+	@FindBy(xpath="//*[contains(text(),'Your order(s) have been successfully submitted')]")
+	WebElement verifyOrderSubmitted;
+	@FindBy(xpath="//*[contains(text(),'50118')]")
+	WebElement eventPlannerSku;
+	@FindBy(id= "tbxSearchBox")
+	WebElement searchTextBox;
+
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_updPnlConfirm']/div[5]/div[5]/table/tbody/tr[2]/td[2]/input")
+	WebElement cancel;
+	// The above need to move to Product management class
+
 	public void switchToPDPwindow() throws InterruptedException {
 		log.debug("inside PDP");
 		selenium.Wait.untilPageLoadComplete(driver);
 		String parentWindowHandle= driver.getWindowHandle();
-		//log.info("Parent window's handle -> " + parentWindowHandle);
-		//Check th2 quantity of the article is not zero
-
 		selenium.Wait.untilPageLoadComplete(driver, (long) 5);
 		String expectedTitle = "Pages - Home";
 		String actualTitle = driver.getTitle();
@@ -197,9 +333,8 @@ public class AcenetArticleDeatilsPage {
 
 	public void confirmPdPloaded() throws InterruptedException {
 		selenium.Wait.untilPageLoadComplete(driver);
-
 		String actualTitle1 = driver.getTitle();
-		log.info("Title : " + actualTitle1);
+		log.info("Verify artical detail page Title : " + actualTitle1);
 
 	}
 
@@ -207,7 +342,7 @@ public class AcenetArticleDeatilsPage {
 		selenium.Wait.untilPageLoadComplete(driver);
 		driver.switchTo().frame("iframeItemDetail"); 
 		log.info("switched to iframe");
-		
+
 
 	}
 	public void confirmSKUDetails() {
@@ -320,13 +455,96 @@ public class AcenetArticleDeatilsPage {
 			Thread.sleep(3000);
 			stockReserve_dropdown.click();
 		}
+		else if(shippingMethod.equalsIgnoreCase("Dropship"))
+		{
+
+			Thread.sleep(5000);	
+			dropDown.click(); 
+			Thread.sleep(3000);
+			dropShip_dropdown.click();
+		}
 		else
 		{
 			log.error("Shipping method is wrong");
 		}
-		//Select sel=new Select(driver.findElement(By.xpath("//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_lstShipMethod']/li[2]/a")));
-		//sel.selectByVisibleText("Ship to Retailer");
+
 		orderQty.sendKeys(productQty);
+	}
+
+	public void selectShippingMethod(String ShippingMethod) throws InterruptedException
+	{
+
+		if(ShippingMethod.equalsIgnoreCase("Ship to Retailer"))
+		{
+			selenium.Wait.explicit(driver,dropDown);
+			dropDown.click();
+			shipToRetailer.click();
+			log.info("Selected shipping method as shipToRetailer");
+		}
+		else if(ShippingMethod.equalsIgnoreCase("RSC Pickup"))
+		{
+			selenium.Wait.explicit(driver,dropDown);
+			dropDown.click(); 
+			selenium.Wait.explicit(driver,rSCPickup);
+			rSCPickup.click();
+			log.info("Selected shipping method as RSC Pickup");
+		}
+		else if(ShippingMethod.equalsIgnoreCase("Stock Reserve"))
+		{
+
+			selenium.Wait.explicit(driver,dropDown);
+			dropDown.click(); 			
+			selenium.Wait.explicit(driver,stockReserve_dropdown);
+			stockReserve_dropdown.click();
+			log.info("Selected shipping method as Stock Reserve");
+		}
+		else if(ShippingMethod.equalsIgnoreCase("Ship to Customer"))
+		{
+
+			selenium.Wait.explicit(driver,dropDown);
+			dropDown.click(); 
+			selenium.Wait.explicit(driver,shipToCustomer);
+			shipToCustomer.click();
+			log.info("Selected shipping method as Ship to Customer");
+		}
+		else if(ShippingMethod.equalsIgnoreCase("Dropship"))
+		{
+
+			selenium.Wait.explicit(driver,dropDown);
+			dropDown.click(); 
+			selenium.Wait.explicit(driver,dropShip_dropdown);
+			dropShip_dropdown.click();
+			log.info("Selected shipping method as Dropship");
+		}
+		else if(ShippingMethod.equalsIgnoreCase("Stock Reserve Backorder"))
+		{
+
+			selenium.Wait.explicit(driver,dropDown);
+			dropDown.click(); 
+			selenium.Wait.explicit(driver,dropShip_dropdown);
+			stockReserveBackorder_dropdown.click();
+			log.info("Selected shipping method as Stock Reserve Backorder");
+		}
+		else if(ShippingMethod.equalsIgnoreCase("Customer Priority Order"))
+		{
+
+			selenium.Wait.explicit(driver,dropDown);
+			dropDown.click(); 
+			selenium.Wait.explicit(driver,customerPriorityorder_dropdown);
+			customerPriorityorder_dropdown.click();
+			log.info("Selected shipping method as Customer Priority Order");
+		}
+		else
+		{//*[@id="ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_lstShipMethod"]/li[6]/a/text()
+			log.error("Please check the Shipping");
+		}
+
+
+	}
+	public void selectProduct(String productQty)
+	{
+		orderQty.sendKeys(productQty);
+		log.info("Given product Qty");
 	}
 	public void enterOrderQtyShipToRetailer() {
 		log.info("Order qty method");
@@ -343,12 +561,12 @@ public class AcenetArticleDeatilsPage {
 
 	public void expressCheckOutSTRClick() {
 
-		log.info("Express check out method");
+
 		addComment.sendKeys("Place Order");
 		expressCheckout.click();
+		log.info("clicked Express check out");
 		selenium.Wait.untilJqueryIsDone(driver, (long) 10);
-		log.info("Express check button click");
-		selenium.Wait.untilJqueryIsDone(driver, (long) 10);
+
 
 	}
 
@@ -365,6 +583,12 @@ public class AcenetArticleDeatilsPage {
 		driver.switchTo().frame("iframeRetailAppHost"); 
 		log.info("switched to iframe");
 	}
+	public void switchToiframedscIframe1() {
+
+		driver.switchTo().frame("dscIframe1"); 
+		log.info("switched to iframe");
+	}
+
 	public void switchToDefault()
 	{
 		driver.switchTo().parentFrame();
@@ -448,23 +672,24 @@ public class AcenetArticleDeatilsPage {
 
 	}
 
+
 	public void Verify_RSCQtyCheck() {
+
 		switchToiframeRetailAppHost();
 		WebDriverWait wait = new WebDriverWait(driver,55);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='MainContentPlaceHolder_divRscQtyCheckBox']")));
 		driver.findElement(By.xpath("//*[@id='MainContentPlaceHolder_divRscQtyCheckBox']")).click();
 		//selenium.Wait.untilPageLoadComplete(driver, (long) 17);
-
-		//Boolean CheckboxSelection=rscQtyCheckBox.isEnabled();
-		//System.out.println(CheckboxSelection);
-
-		/*if(CheckboxSelection.equals(true))
+		/*Boolean CheckboxSelection=rscQtyCheckBox.isEnabled();
+		System.out.println(CheckboxSelection);
+		if(CheckboxSelection.equals(true))
 		{
 			rscQtyCheckBox.click();
 			log.debug("RSC qty checkbox is Unchecked");}
 		else {
 			log.debug("RSC qty checkbox is checked");
-		}*/
+		}
+		 */
 
 		selenium.Wait.untilPageLoadComplete(driver);
 		List<WebElement> elements = driver.findElements(By.xpath("//*[contains(text(),'RSC')]"));
@@ -482,94 +707,276 @@ public class AcenetArticleDeatilsPage {
 		driver.switchTo().defaultContent();
 	}
 	public void CreateNewBasket(String shippingMethod) throws InterruptedException {
-		//String shippingMet=shippingMethod;
-
-		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		//String basketName="Automate8"+ "\\"  + timestamp;
-		String basketName="Automate8";
-		System.out.println("basketName"+basketName);
-		System.out.println("shippingMethod"+shippingMethod);
-		switchToiframeRetailAppHost();
-		Thread.sleep(10000);
-		selenium.Wait.untilPageLoadComplete(driver, (long) 10);
+		String basketName="Automate8";	
 		AddQty.sendKeys("1");
+		selenium.Wait.explicit(driver,AddToBasket_Btn);
 		AddToBasket_Btn.click();
+		log.info("Click on add basket");
+		log.info("Create New basket popup is opened");
 		selenium.Wait.untilPageLoadComplete(driver);
 		CreateNewBasket.click();
 		BasketName_txt.sendKeys(basketName);
+		log.info("Enter basket name");
 		Select sel=new Select(shipingMethod);
-		sel.selectByVisibleText(shippingMethod);
-		Thread.sleep(5000);
+		sel.selectByVisibleText(shippingMethod);		
 		AddToBasket_popBtn.click();
-		WebDriverWait wait = new WebDriverWait(driver,65);		 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='MainContentPlaceHolder_btnAlertOKClose']")));
-		driver.findElement(By.xpath("//*[@id='MainContentPlaceHolder_btnAlertOKClose']")).click();
+		log.info("New basket has been created");
+		selenium.Wait.explicit(driver,alertOKClose_popup);
+		//WebDriverWait wait = new WebDriverWait(driver,55);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='MainContentPlaceHolder_btnAlertOKClose']")));
+		log.info("Click OK to close popup ");
+		alertOKClose_popup.click();
 
-		switchToDefault();
+
 	}
 
 
-	public void AddSkusToBasket(String sku) throws InterruptedException {
-		Thread.sleep(3000);					
+	/*public void AddTocart() throws InterruptedException {
+		Thread.sleep(3000);		
 		searchTextBox.sendKeys("Test");
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver,55);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/header/div[1]/div[7]/div/div/div/header/div[2]/div/a/img")));
-		driver.findElement(By.xpath("/html/body/header/div[1]/div[7]/div/div/div/header/div[2]/div/a/img")).click();
-
-		//addToCart.click();		
+		addToCart.click();
+		log.info("Clicked on Add to cart");
+	}*/
+	public void AddSkusToBasket(String sku) throws InterruptedException
+	{
 		selenium.Wait.untilPageLoadComplete(driver, (long) 20);
-		switchToiframeRetailAppHost();
+		//switchToiframeRetailAppHost();
+		selenium.Wait.explicit(driver,selectBasket);
 		selectBasket.click();
-		Thread.sleep(3000);
+		log.info("Select the basket which is created");
+
+		selenium.Wait.explicit(driver,addSkusBasket);
 		addSkusBasket.click();
+		log.info("Click on add sku's to basket to add the list of sku's");
+
 		switchToiframeIfrmQuickEntry();
+		log.info("Sku's are ready to add into the basket");
 		addSku1.sendKeys(sku);		
 		addQty1.sendKeys("1");
+
 		//addSku2.sendKeys("20267");
 		//addQty2.sendKeys("1");
+
 		addSkusBasket.click();
+		selenium.Wait.explicit(driver,closeBasket_popup);
 		closeBasket_popup.click();
+		log.info("Sku's added into the basket and close the popup");
 		driver.switchTo().defaultContent();
 		switchToiframeRetailAppHost();
+		selenium.Wait.explicit(driver,checkout);
 		checkout.click();
-		Thread.sleep(5000);	
+
 
 	}
-	public void OrderCheckout(String shipType) throws InterruptedException {
-				
-		if(shipType.contains("Stock Reserve"))
-		{				
 
-			Thread.sleep(3000);	
-			expressCheckout_basket.click();
+
+
+	public void OrderCheckout(String shipType) throws InterruptedException {
+		//using it for PlaceDropshipOrder,PlaceOrderWithShiptoCustomer
+		System.out.println(shipType);
+		if(shipType.equalsIgnoreCase("Stock Reserve"))
+		{				
+			expressCheckout.click();
+			log.info("Express checkout has done PDP");			
+			expressCheckout_basket.click();		
+
+			log.info("Express checkout has done");
 		}
 		else if(shipType.contains("Ship to Retailer"))
 		{
-			//checkout.click();
+			expressCheckout.click();
 			checkout_ShipToRetailer.click();
+			log.info("Express checkout has done for Ship To Retailer");
+			/*if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
+			{
+				log.info("Order has placed successfully");
+			}
+			log.error("Order has not placed successfully");*/
+		}
+		else if(shipType.contains("Ship to Customer"))
+		{
+			expressCheckout.click();
+			log.info("Enter required info for Ship to Customer");
+			shippingAddressName.sendKeys("Customer");
+			shippingAddressLine.sendKeys("Test address");
+			shippingAddressCity.sendKeys("Little rock");
+			shippingAddressSte.sendKeys("AR - Arkansas");
+
+			System.out.println(shippingAddressPhone.getText());	
+			Thread.sleep(5000);
+			JavascriptExecutor jse = (JavascriptExecutor)driver;
+			//jse.executeScript("document.getElementById('elementID').setAttribute('value', 'new value for element')");
+			jse.executeScript("document.getElementById('ctl00_ctl00_contentMainPlaceHolder_MainContent_txtPhone').value='1234567878'");
+					//shippingAddressPhone.sendKeys("1231231234");
+			shippingAddressZip.sendKeys("72211");
+			//shippingAddressPhone.sendKeys("1231231234");
+			log.info("All required info has provided for Ship to Customer");			
+			validate.click();
+			phone_popup.click();
+			//Thread.sleep(3000);
+			shippingAddressPhone.click();
+			shippingAddressPhone.sendKeys("1231231234");
+
+			continue_Button.click();
+			checkout_ShipToRetailer.click();
+			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
+
+				log.info("Order has placed successfully");
+			else
+				log.error("Order has not placed successfully");
+
+		}
+		else if(shipType.contains("RSC Pickup"))
+		{
+			expressCheckout.click();
+			log.info("Click on Checkout button");
+			/*log.info("providing RSC pickup deatils");
+			rSCPickupName.sendKeys("John");
+			rSCPickupPickupPerson.sendKeys("John");
+			rSCPickupDate.sendKeys("12/17/2020");
+			rSCPickupTime.sendKeys("12");
+			rSCPickupName.click();
+			Thread.sleep(2000);
+			rSCPickupOrder.click();
+			log.info("provided RSC pickup deatils successfully");
+
+			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
+			{
+				log.info("Order has placed successfully");
+			}
+			log.error("Order has not placed successfully");*/
+		}
+		else if(shipType.equalsIgnoreCase("DropShip"))
+		{
+			expressCheckout.click();
+			log.info("Clicked on express checkout process");
+		}
+
+		else if(shipType.equalsIgnoreCase("Stock Reserve Backorder"))
+		{
+			selenium.Wait.explicit(driver, expressCheckout);
+			expressCheckout.click();
+			log.info("Clicked on express checkout process");
+			selenium.Wait.explicit(driver, stockReservedBackorder_checkout);
+
+			stockReservedBackorder_checkout.click();
+			log.info("Clicked on checkout process");
+
+
+		}
+		else if(shipType.equalsIgnoreCase("Customer Priority Order"))
+		{
+
+			String rscQty=rscQtycheck_ItemDeatilsPage.getText();
+			System.out.println("RSC quatity"+rscQty);
+			log.debug("RSC quatity"+rscQty);
+
+			selenium.Wait.explicit(driver, expressCheckout);
+			customerName_CustPriority.sendKeys("John");
+			expressCheckout.click();
+			log.info("Clicked on express checkout process");
+			if(rscQty.equalsIgnoreCase("0"))
+			{
+				log.error("The order quantity entered is greater than the available RSC quantity.  Please modify your order quantity.");
+			}
+			else
+			{
+				log.info("Order has been submitted");
+			}
+		}
+		else
+		{
+			log.info("Cross-Dock Pick Up shippemnt checkout process");
+			checkout.click();
+			rSCPickupName.sendKeys("John");
+			rSCPickupPickupPerson.sendKeys("John");
+			rSCPickupDate.sendKeys("12/17/2020");
+			rSCPickupTime.sendKeys("12");
+			rSCPickupName.click();
+			Thread.sleep(2000);
+			rSCPickupOrder.click();
+			log.info("Cross-Dock Pick Up shippemnt checkout process completed");
+
 			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
 			{
 				log.info("Order has placed successfully");
 			}
 			log.error("Order has not placed successfully");
 		}
+	}
+	public void DropshipContinueCheckout()
+	{
+		dropship_continueChkout.click();
+		log.info("Clicked on continue checkout process");
+		dropshipContinue.click();
+		log.info("Clicked on continue in the popup");
+		dropshipOK_Button.click();
+		log.info("Order has been placed");
+	}
+	public void MultipleSkuOrderCheckout(String shipType) throws InterruptedException 
+	{
+		System.out.println("shipType"+ shipType);
+		if(shipType.contains("Stock Reserve"))
+		{	
+			switchToiframeRetailAppHost();
+			expressCheckout_basket.click();
+			log.info("Express checkout has done PDP");			
+			switchToDefault();
+		}
+		else if(shipType.contains("Ship to Retailer"))
+		{
+			switchToiframeRetailAppHost();
+			log.info("enter into an expected methods");
+			checkout_ShipToRetailer.click();
+
+			log.info("Express checkout has done for Ship To Retailer");
+			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
+			{
+				log.info("Order has placed successfully");
+			}
+			else
+			{
+				log.error("Order has not placed successfully");
+			}
+			switchToDefault();
+		}
 		else if(shipType.contains("Ship to Customer"))
 		{
-			//checkout.click();
-
-			AceRewards.sendKeys("3126752312");
+			switchToiframeRetailAppHost();
+			log.info("Enter required info for Ship to Customer");
+			//AceRewards.sendKeys("3126752312");
 			shippingAddressName.sendKeys("John");
 			shippingAddressLine.sendKeys("1211 s Quebec");
 			shippingAddressCity.sendKeys("Denver");
 			shippingAddressSte.sendKeys("CO");
-			shippingAddressZip.sendKeys("80231");
+			shippingAddressZip.sendKeys("80231"); 
+			Thread.sleep(3000);
 			shippingAddressPhone.sendKeys("3126752312");
+			selenium.Wait.explicit(driver, validate);
 			validate.click();
-		}
-		else if(shipType.contains("RSC Pickup"))
-		{
-			//checkout.click();
+			selenium.Wait.explicit(driver, continue_Button);
+			continue_Button.click();
+			selenium.Wait.explicit(driver, recalculate_btn);
+			recalculate_btn.click();
+			selenium.Wait.explicit(driver, checkout_ShipToRetailer);
+			checkout_ShipToRetailer.click();
 
+			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
+			{
+				log.info("Order has placed successfully");}
+			else
+			{
+				log.error("Order has not placed successfully");
+			}
+			switchToDefault();
+		}
+		else if(shipType.contains("RSC Pick Up"))
+		{
+			//expressCheckout.click();
+			switchToiframeRetailAppHost();
+			log.info("providing RSC pickup deatils");
 			rSCPickupName.sendKeys("John");
 			rSCPickupPickupPerson.sendKeys("John");
 			rSCPickupDate.sendKeys("12/17/2020");
@@ -577,40 +984,395 @@ public class AcenetArticleDeatilsPage {
 			rSCPickupName.click();
 			Thread.sleep(2000);
 			rSCPickupOrder.click();
-
+			log.info("provided RSC pickup details successfully");
 
 			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
 			{
 				log.info("Order has placed successfully");
 			}
-			log.error("Order has not placed successfully");
+			else
+			{
+				log.error("Order has not placed successfully");
+			}
+			switchToDefault();
+		}
+		else if(shipType.equalsIgnoreCase("DropShip"))
+		{
+
+		}
+		else if(shipType.equalsIgnoreCase("Cross-Dock Pick Up"))
+		{
+			switchToiframeRetailAppHost();
+			log.info("Cross-Dock Pick Up shippement checkout process");
+			//checkout.click();
+			rSCPickupName.sendKeys("John");
+			rSCPickupPickupPerson.sendKeys("John");
+			rSCPickupDate.sendKeys("12/17/2020");
+			rSCPickupTime.sendKeys("12");
+			rSCPickupName.click();
+			Thread.sleep(2000);
+			rSCPickupOrder.click();
+			log.info("Cross-Dock Pick Up shippement checkout process completed");
+
+			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
+			{
+				log.info("Order has placed successfully");
+			}
+			else
+			{
+				log.error("Order has not placed successfully");
+			}
+			switchToDefault();
 		}
 		else
 		{
-			System.out.println("Cross-Dock Pick Up");
-			checkout.click();
 
-			rSCPickupName.sendKeys("John");
-			rSCPickupPickupPerson.sendKeys("John");
-			rSCPickupDate.sendKeys("12/17/2020");
-			rSCPickupTime.sendKeys("12");
-			rSCPickupName.click();
-			Thread.sleep(2000);
-			rSCPickupOrder.click();
-
-
-			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
-			{
-				log.info("Order has placed successfully");
-			}
-			log.error("Order has not placed successfully");
 		}
 	}
 
+	public void Click_ChangeRSCCheckout(String shippingMethod)
+	{
+		selenium.Wait.explicit(driver,expressCheckout);
+		expressCheckout.click();
+		log.info("Clicked on express checkout");
+
+	}
+	public void SelectDifferentRSC()
+	{
+		selenium.Wait.explicit(driver,newRSCvalue);
+		newRSCvalue.click();
+		newRSCvalue.sendKeys("2");
+		log.info("New RSC value entered");
+		selenium.Wait.explicit(driver,recalculate_btn);
+		recalculate_btn.click();
+		log.info("Clicked on Recalculate button");
+		selenium.Wait.explicit(driver,checkout_ShipToRetailer);
+		checkout_ShipToRetailer.click();
+		log.info("Clicked on checkout button");
+	}
+	public void RemoveOldRsc()
+	{
+		selenium.Wait.explicit(driver,differentRSCLink);
+
+		differentRSCLink.click();
+		log.info("Different RSC link is clicked");
+		removevalue.clear();
+		log.info("Removed existing RSC value");
+		selenium.Wait.explicit(driver,recalculate_btn);
+		recalculate_btn.click();
+		log.info("Clicked on Recalculate button");
+	}
+
+	//This should be move to product management class 
+	public void NavigateTomanageProductTab() throws InterruptedException {
+
+		selenium.Wait.explicit(driver,manageProduct_Tab);
+		manageProduct_Tab.click();
+		log.info("Navigated to Management Product tab");
+
+	}
+	//This should be move to product management class 
+	public void NavigateTodiscoveryAssortmentPlannerPage() {
 
 
+		selenium.Wait.explicit(driver,discoveryAssortmentPlanner_SubTab);
+		discoveryAssortmentPlanner_SubTab.click();
+		log.info("Navigated to discovery Assortment Planner page");
+
+	}
+	//This should be move to product management class 
+
+	public void discoveryAssortmentpageSelections(String orderQty) throws InterruptedException {
 
 
+		selenium.Wait.explicit(driver,merchDept);
+		merchDept.click();	
+		log.info("Merchandise dept selected");
+
+		selenium.Wait.explicit(driver,merchClass);
+		merchClass.click();
+		log.info("Merchandise class selected");
+
+		selenium.Wait.explicit(driver,merchPG);
+		merchPG.click();
+		log.info("Merchandise PG selected ");
+		selenium.Wait.untilPageLoadComplete(driver);
+		//selenium.Wait.explicit(driver,merchOrderQty);
+		merchOrderQty.clear(); Thread.sleep(3000);
+		merchOrderQty.sendKeys(orderQty);
+		String sku="10051";	
+		log.info("Order Qty provided ");
+
+	}
+	//This should be move to product management class
+	public void selectMerchandise() {
+		//switchToiframeRetailAppHost();
+		selenium.Wait.explicit(driver,bymerchClass);
+		//WebDriverWait wait = new WebDriverWait(driver,45);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='form1']/div[3]/div[1]/div[3]/div[3]/div[2]/div[5]/a")));
+		bymerchClass.click();
+		log.info("Selected Merchandise option");
+
+	}
+	//This should be move to product management class
+	public void VerifyProductInDiscoverCart() {
+		String sku="10051";
+		String discoverSku= discoverySku.getText();
+		if(discoverSku.equalsIgnoreCase(sku))
+		{
+			log.debug("Placed an item has been displayed in the discovery basket");
+		}
+		else
+		{
+			log.debug("Placed an item has not displayed in the discovery basket");
+		}
+	}
+	public void VerifyProductInEventPlannerCart() {
+		String sku="50118";
+		String eventplannerSku= eventPlannerSku.getText();
+		if(eventPlannerSku.equals(sku))
+		{
+			log.debug("Placed an item has been displayed in the Event planner basket");
+		}
+		else
+		{
+			log.debug("Placed an item has not displayed in the Event planner basket");
+		}
+	}
+	public void SelectDiscoveryBasket() throws InterruptedException
+	{
+		switchToiframedscIframe1();
+
+		selenium.Wait.explicit(driver,discoveryBasketSelection);
+		discoveryBasketSelection.click();
+		log.info("Discovery basket has selected");
+		switchToDefault();
+	}
+	public void SelectEventPlannerBasket()
+	{
+		//switchToiframedscIframe1();
+		selenium.Wait.explicit(driver,eventPlannerBasketSelection);
+		eventPlannerBasketSelection.click();
+		log.info("Event planner basket has selected");
+		//switchToDefault();
+	}
+
+	public void SelectManageProduct_SubTabs() {
+		selenium.Wait.explicit(driver,browseProductVendor_Tab);
+		browseProductVendor_Tab.click();
+		log.info("Manage product sub tab selected");
+	}
+	public void SelectEventPlanner_SubTabs()
+	{
+		selenium.Wait.explicit(driver,EventPlanner_Subtab);
+		EventPlanner_Subtab.click();
+		log.info("Manage produc sub tab selected");
+	}
+
+	public void SelectVendorCatagory() {
+		selenium.Wait.explicit(driver,vendorCatagorySelection);
+		vendorCatagorySelection.click();
+		log.info("Vendor catagory selected");
+
+	}
+	public void SelectEventCatagory()
+	{
+		selenium.Wait.explicit(driver,eventCatogory);
+		//selenium.Wait.explicit(driver,eventCatry);
+		//eventCatry.sendKeys("PROMO/RETAIL EXEC");
+		eventCatry.click();
+		log.info("Event catagory selected");
+		selenium.Wait.explicit(driver,eventPlanner_gobutton);
+		eventPlanner_gobutton.click();
+	}
+	public void AppyVendorsFilter() {
+
+		selenium.Wait.explicit(driver,vendorFilter);
+		vendorFilter.click();
+		selenium.Wait.explicit(driver,vendorDeptFilter);
+		vendorDeptFilter.click();
+		selenium.Wait.explicit(driver,vedorApplyFilter);
+		vedorApplyFilter.click();
+		log.info("Vendor fileters selected");
+
+	}
+
+	public void VendorOrderingOption() {
+		selenium.Wait.explicit(driver,vendorOrderingOption_click);
+		vendorOrderingOption_click.click();
+
+
+	}
+
+	public void VerifyPage() {
+
+		WebDriverWait wait = new WebDriverWait(driver,45);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='divSearchPageHeader']/span[1]")));
+		String expectedPage=verifySearch.getText();
+		log.info("Expected page "+expectedPage);
+		if(expectedPage.equalsIgnoreCase("Showing Results for"))
+		{
+			log.info("Expected page");
+		}
+		else{
+			log.info("landed into wrong page");
+		}
+
+	}
+
+	public void selectVendorSku(String sku) {
+
+		if(sku.equalsIgnoreCase("1182237"))
+		{
+			log.info("Expected sku is displayed in the search page "+sku);
+		}
+		log.info("Expected sku is not in the search page "+sku);
+
+		select_vendorSku.click();
+
+	}
+
+	public void ClickAddToCart() {
+
+		selenium.Wait.untilPageLoadComplete(driver);
+		searchTextBox.sendKeys(".");
+		selenium.Wait.explicit(driver,addToCart);
+		addToCart.click();
+		log.info("Add to cart clicked");
+
+	}
+
+	public void ClickDiscoverCart() {
+		selenium.Wait.explicit(driver,discoveryCart);
+
+		discoveryCart.click();
+		log.info("Discovery cart is selected");
+
+	}
+	public void ClickEventPlannerCart()
+	{
+		selenium.Wait.explicit(driver,eventPlannerCart);
+		eventPlannerCart.click();
+		log.info("event Planner cart is selected");	}
+
+	public void DiscoverySelectedSkuToCheckout() {
+		DiscoverySelectedSku_Checkout.click();
+		log.info("Discovery Sku has selected for checkout");
+		Discovery_Checkout_button.click();
+		log.info("Discovery Sku has selected and Checkout also done");
+	}
+
+	public void EventPlannerCheckout()
+	{
+		eventPlannerCheckut.click();
+		log.info("Event planner checkout done");
+	}
+	public void VerifyOrderSubmitted()
+	{
+		selenium.Wait.untilPageLoadComplete(driver);
+		System.out.println(""+verifyOrderSubmitted.getText());
+		log.info("Order submmited and verified");
+
+	}
+	public void CreateNewBasket() throws InterruptedException {
+
+		WebDriverWait wait = new WebDriverWait(driver,55);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='btnCreateBasket']")));
+		createNewBasket_Button.click();
+		log.info("create New Basket Button is clicked");
+	}
+
+	public void CreateNewBasketDetails(String basketName2, String shippingMethod, String custName2, String custPh2, String custEmail2) throws InterruptedException {
+
+		log.info("Enter all the values to create new basket");
+		basketName.sendKeys(basketName2);
+		System.out.println("shippingMethod"+shippingMethod);
+		shipMethod.click(); Thread.sleep(3000);
+		if(shippingMethod.equalsIgnoreCase("RSC Pick Up"))
+		{
+			shipMethod_RSCSelection.click();
+			log.info("Selected shipment type as RSC Pickup ");
+		}
+		else if(shippingMethod.equalsIgnoreCase("Ship to Retailer"))
+		{
+			shipMethod_ShipToRetailer.click();
+			log.info("Selected shipment type as Ship to Retailer");
+		}
+		else if(shippingMethod.equalsIgnoreCase("Ship to Customer"))
+		{
+			shipMethod_ShipToCustomer.click();
+			log.info("Selected shipment type as Ship to Customer");
+		}
+		custName.sendKeys(custName2);
+		custPh.sendKeys(custPh2);
+		custEmail.sendKeys(custEmail2);
+		basketCreate.click();
+		log.info("New basket has been created with "+basketName2);
+	}
+
+	public void AddSkusToBasket2(String Sku) {
+		selenium.Wait.explicit(driver, addSkusBasket);
+		addSkusBasket.click();
+		log.info("Click on add sku's to basket to add the list of sku's");	
+		switchToiframeIfrmQuickEntry();
+		log.info("Sku's are ready to add into the basket");
+		addSku1.sendKeys(Sku);		
+		addQty1.sendKeys("1");
+		//addSku2.sendKeys("20267");
+		//addQty2.sendKeys("1");		
+		addSkusBasket.click();
+		closeBasket_popup.click();
+		log.info("Sku's added into the basket and close the popup");
+		driver.switchTo().defaultContent();
+		switchToiframeRetailAppHost();
+		selenium.Wait.explicit(driver,checkout);
+		checkout.click();
+		log.info("Click on Checkout button after added Sku");
+	}
+
+	public void ProvideSkuQty(String skuQty) {
+		// TODO Auto-generated method stub
+		System.out.println("skuQty"+ skuQty);
+		eventPlannerSkuSelection.sendKeys(skuQty);
+		log.info("Sku's qty provided"); 
+		selenium.Wait.explicit(driver,eventPlannerView_Dropdown);
+		eventPlannerView_Dropdown.click();
+		//*[@id="imgShowHideNavFilters"]
+		/*for (int i = 001; i < 007; i++) 
+		{
+			System.out.println("i"+ i);			
+			WebElement qtySize=driver.findElement(By.xpath("//*[@id='Qty_50118_021244-003']"));
+			System.out.println("qtySize"+qtySize);
+
+			if(qtySize==null)
+			{
+				driver.findElement(By.xpath("//*[@id='Qty_50118_021244-["+(i)+"]']")).sendKeys("3");
+			}
+			else
+			{
+			driver.findElement(By.xpath("//*[@id='Qty_50118_021244-["+(i+1)+"]']"));
+
+		}
+
+		}*/
+	}
+
+	public void rscPickupDetails(String rSCPickupName2, String rSCPickupDate2) throws InterruptedException {
+		// TODO Auto-generated method stub
+		log.info("providing RSC pickup details");
+		rSCPickupName.sendKeys(rSCPickupName2);
+		rSCPickupPickupPerson.sendKeys("John");
+		rSCPickupDate.sendKeys(rSCPickupDate2);
+		rSCPickupTime.sendKeys("12");
+		rSCPickupName.click();
+		Thread.sleep(2000);
+		rSCPickupOrder.click();
+		log.info("provided RSC pickup deatils successfully");
+		if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
+		{
+			log.info("Order has placed successfully");
+		}
+		log.error("Order has not placed successfully");
+	}
 }
-
 

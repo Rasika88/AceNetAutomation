@@ -1,0 +1,13 @@
+02:04:39.022 [pool-1-thread-1] INFO  AcenetHomePageSteps - Search an article
+02:04:40.514 [pool-1-thread-1] DEBUG LogsTest - inside PDP
+02:04:40.783 [pool-1-thread-1] INFO  LogsTest - Title : Pages - Home
+02:04:40.784 [pool-1-thread-1] INFO  LogsTest - AceNet QA is Logged in
+02:04:40.833 [pool-1-thread-1] INFO  LogsTest - CDwindow-D69DAF0C4B58E4C24D8CBBAE43448C6C1
+02:04:40.996 [pool-1-thread-1] INFO  LogsTest - [CDwindow-D69DAF0C4B58E4C24D8CBBAE43448C6C, CDwindow-EC260C22A6D0A6DFCF68D46F47ADF89D]2
+02:04:42.444 [pool-1-thread-1] INFO  LogsTest - Verify artical detail page Title : ACENET - Item Details
+02:05:02.326 [pool-1-thread-1] INFO  LogsTest - switched to iframe
+02:05:13.061 [pool-1-thread-1] INFO  LogsTest - switched to iframe
+02:05:15.372 [pool-1-thread-1] INFO  LogsTest - Selected shipping method as shipToRetailer
+02:05:26.291 [pool-1-thread-1] INFO  LogsTest - switched to iframe
+02:05:26.730 [pool-1-thread-1] INFO  LogsTest - Given product Qty
+02:05:37.884 [pool-1-thread-1] INFO  LogsTest - switched to iframe

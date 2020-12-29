@@ -1,0 +1,16 @@
+05:56:44.769 [main] INFO  LogsTest - Order confirmation method
+05:56:44.979 [main] INFO  LogsTest - Confirm the details
+05:56:59.694 [main] INFO  LogsTest - Stock Reserve Order No is : 8015627
+05:56:59.695 [main] INFO  AcenetOrderConfirmationPageSteps - Confirm Order
+05:58:46.142 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+05:58:46.531 [main] INFO  AcenetHomePageSteps - Select the Store.
+05:58:46.531 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+05:58:56.597 [main] DEBUG LogsTest - 0
+05:58:56.839 [main] INFO  LogsTest - Logged in to first store
+05:58:56.905 [main] DEBUG LogsTest - Store selected and confirmed login
+05:58:56.905 [main] ERROR LogsTest - Store not selected successfully
+05:58:57.791 [main] INFO  AcenetHomePageSteps - Search an article
+05:58:58.308 [main] DEBUG LogsTest - inside PDP
+05:58:58.375 [main] INFO  LogsTest - Title : Pages - Home
+05:58:58.376 [main] INFO  LogsTest - AceNet QA is Logged in
+05:58:58.380 [main] INFO  LogsTest - CDwindow-8C96A004BA24A0E42EE026337027097A1

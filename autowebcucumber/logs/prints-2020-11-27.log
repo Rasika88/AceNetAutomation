@@ -1,0 +1,15 @@
+06:07:38.877 [main] INFO  LogsTest - Search with Article
+06:07:39.088 [main] INFO  LogsTest - Click on Search button with Article
+06:07:39.089 [main] INFO  AcenetHomePageSteps - Search an article
+06:07:39.569 [main] DEBUG LogsTest - inside PDP
+06:07:39.628 [main] INFO  LogsTest - Title : Pages - Home
+06:07:39.628 [main] INFO  LogsTest - AceNet QA is Logged in
+06:07:39.630 [main] INFO  LogsTest - CDwindow-74574A9A6DB136317B81488858B695221
+06:07:39.637 [main] INFO  LogsTest - [CDwindow-74574A9A6DB136317B81488858B69522, CDwindow-7146FE2DC0EBD3079593EB42D636EADE]2
+06:07:40.715 [main] INFO  LogsTest - Verify artical detail page Title : ACENET - Item Details
+06:07:57.061 [main] INFO  LogsTest - switched to iframe
+06:08:07.549 [main] INFO  LogsTest - switched to iframe
+06:08:08.018 [main] INFO  LogsTest - Selected shipping method as shipToRetailer
+06:08:18.539 [main] INFO  LogsTest - switched to iframe
+06:08:18.773 [main] INFO  LogsTest - Given product Qty
+06:08:29.242 [main] INFO  LogsTest - switched to iframe

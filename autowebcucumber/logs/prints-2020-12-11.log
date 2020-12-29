@@ -1,0 +1,16 @@
+06:12:51.122 [main] ERROR LogsTest - Store not selected successfully
+06:12:56.701 [main] INFO  LogsTest - Navigated to Management Product tab
+06:13:25.132 [main] INFO  LogsTest - switched to iframe
+06:14:25.873 [main] INFO  LogsTest - switched to iframe
+06:15:00.392 [main] INFO  LogsTest - switched to iframe
+06:15:30.786 [main] INFO  LogsTest - switched to iframe
+06:15:30.974 [main] INFO  LogsTest - Expected page Showing Results for
+06:15:30.974 [main] INFO  LogsTest - Expected page
+06:15:41.459 [main] INFO  LogsTest - switched to iframe
+06:15:41.459 [main] INFO  LogsTest - Expected sku is displayed in the search page 1182237
+06:15:41.459 [main] INFO  LogsTest - Expected sku is not in the search page 1182237
+06:15:43.444 [main] DEBUG LogsTest - inside PDP
+06:15:43.494 [main] INFO  LogsTest - Title : Pages - Product Search
+06:15:43.494 [main] ERROR LogsTest - AceNet QA is not Logged in
+06:15:43.497 [main] INFO  LogsTest - CDwindow-8ED1BA0A25658598CAB15C5B45B08C161
+06:15:43.505 [main] INFO  LogsTest - [CDwindow-8ED1BA0A25658598CAB15C5B45B08C16, CDwindow-A76711A86251CC7A6FDA30DC22D66CA7]2

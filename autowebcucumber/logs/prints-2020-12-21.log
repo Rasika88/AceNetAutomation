@@ -1,0 +1,14 @@
+03:32:42.618 [main] INFO  LogsTest - [CDwindow-69F73962DE49FB30FEE2FEF1F3225F5B, CDwindow-C50430964B3091B6B9D679C833098CA3]2
+03:33:31.798 [main] INFO  LogsTest - Verify artical detail page Title : ACENET - Item Details
+03:33:41.961 [main] INFO  LogsTest - switched to iframe
+03:33:52.457 [main] INFO  LogsTest - switched to iframe
+03:33:53.826 [main] INFO  LogsTest - Selected shipping method as Stock Reserve Backorder
+03:34:04.323 [main] INFO  LogsTest - switched to iframe
+03:34:04.547 [main] INFO  LogsTest - Given product Qty
+03:34:15.368 [main] INFO  LogsTest - switched to iframe
+03:34:15.775 [main] INFO  LogsTest - Clicked on express checkout process
+03:34:28.694 [main] INFO  LogsTest - Clicked on checkout process
+23:35:56.632 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+23:35:57.020 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:36:02.045 [main] INFO  LogsTest - Select store
+23:36:07.861 [main] INFO  LogsTest - Navigated to Management Product tab

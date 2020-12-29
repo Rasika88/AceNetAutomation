@@ -14,12 +14,21 @@ import dataProvider.ConfigFileReader;
 
 public class AcenetOrdersConfirmationPage {
 	WebDriver driver;
-	Logger log=LogManager.getLogger("LogsTest");
+	Logger log=LogManager.getLogger("AcenetOrdersConfirmationPage");
 	ConfigFileReader configOb =new ConfigFileReader();
 
+	//Initializing driver
+		public AcenetOrdersConfirmationPage(WebDriver driver) {
+			this.driver = driver;
+			PageFactory.initElements(driver, this);
+		}
 
 	@FindBy(xpath="//div[@id='IDContainer']//section//tr[2]")
 	WebElement confirmOrder;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_repeaterConfirmation_ctl01_gvConfirmation']/tbody/tr[2]/td[2]")
+	WebElement orderNumber;
+	@FindBy(xpath="//*[@id='bodycontent']/div[3]/input[1]")
+	WebElement continue_Button;
 	@FindBy(xpath="(//*[contains(text(),'Manage Product')])[2])")
 	WebElement manageProduct_Tab;
 			
@@ -27,25 +36,21 @@ public class AcenetOrdersConfirmationPage {
 	WebElement stockReserveListing_link;
 	@FindBy(xpath="(//*[contains(text(),'Special Order Listing')])[2]")
 	WebElement splOrderListing_link;
-	//Initializing driver
-	public AcenetOrdersConfirmationPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
-
+	
 	public void ConfirmOrder()
 	{
 
-		log.info("Order confirmation method");
+		/*log.info("Order confirmation method");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		confirmOrder.isDisplayed(); 
 		log.info("Confirm the details");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		WebElement OrderDetails = driver.findElement(By.cssSelector("#ctl00_ctl00_contentMainPlaceHolder_MainContent_repeaterConfirmation_ctl01_gvConfirmation > tbody > tr:nth-child(2) > td:nth-child(2)"));
 		String OrderNo = OrderDetails.getText();
-		log.info("Stock Reserve Order No is : " + OrderNo );
-		
-		
+		log.info("Stock Reserve Order No is : " + OrderNo );*/
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		String orderNo=orderNumber.getText();
+		log.info("Stock Reserve Order No is : " + orderNo);
 
 	}
 
@@ -53,6 +58,10 @@ public class AcenetOrdersConfirmationPage {
 		driver.switchTo().frame("iframeItemDetail"); 
 		log.info("switched to order confirmation iframe");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	public void switchToDefault()
+	{
+		driver.switchTo().parentFrame();
 	}
 
 	public void switchToiframeRetailAppHost() {

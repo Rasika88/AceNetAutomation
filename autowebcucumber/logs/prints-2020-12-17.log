@@ -1,0 +1,16 @@
+04:29:24.639 [main] INFO  LogsTest - switched to iframe
+04:29:32.161 [main] INFO  LogsTest - event Planner cart is selected
+04:29:42.634 [main] INFO  LogsTest - switched to iframe
+04:29:45.931 [main] INFO  LogsTest - Event planner basket has selected
+04:29:56.487 [main] INFO  LogsTest - switched to iframe
+04:29:56.576 [main] DEBUG LogsTest - Placed an item has not displayed in the Event planner basket
+04:30:06.980 [main] INFO  LogsTest - switched to iframe
+04:30:10.716 [main] INFO  LogsTest - Event planner checkout done
+04:32:30.220 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+04:32:30.602 [main] INFO  AcenetHomePageSteps - Select the Store.
+04:32:35.179 [main] INFO  LogsTest - Select store
+04:32:40.919 [main] INFO  LogsTest - Navigated to Management Product tab
+04:32:43.095 [main] INFO  LogsTest - Manage produc sub tab selected
+04:32:53.564 [main] INFO  LogsTest - switched to iframe
+04:32:54.165 [main] INFO  LogsTest - Event catagory selected
+04:33:06.065 [main] INFO  LogsTest - switched to iframe

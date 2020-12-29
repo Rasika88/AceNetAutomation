@@ -1,6 +1,7 @@
 
 package runners;
 
+
 import java.io.File;
 
 import org.junit.AfterClass;
@@ -30,12 +31,11 @@ import zephyr.utils.CreateCycleInZephyr;
 	//plugin = { "pretty","com.epam.reportportal.cucumber.StepReporter"},
 	plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
 	monochrome = true
-	,tags= {"@PlaceOrderWithShiptoRetailerUsingDifferentRSC"}
+	,tags= {"@PlaceOrderWithShiptoCustomer"}
 	//,tags= {"@AritcleDetailsPage,@PlaceStockReserveOrder,@PlaceOrderShipToRetiler,@AcenetHomePageSearchAnArticleTestSteps"}
 	
 	)
  
-
 public class TestRunner{
 	@AfterClass
 	public static void writeExtentReport() {

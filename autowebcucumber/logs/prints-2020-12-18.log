@@ -1,0 +1,16 @@
+06:49:57.389 [main] INFO  LogsTest - switched to iframe
+06:49:58.100 [main] INFO  LogsTest - Vendor catagory selected
+06:50:17.315 [main] INFO  LogsTest - switched to iframe
+06:50:25.651 [main] INFO  LogsTest - Vendor fileters selected
+06:50:36.116 [main] INFO  LogsTest - switched to iframe
+06:50:54.905 [main] INFO  LogsTest - switched to iframe
+06:50:55.056 [main] INFO  LogsTest - Expected page Showing Results for
+06:50:55.056 [main] INFO  LogsTest - Expected page
+06:51:05.505 [main] INFO  LogsTest - switched to iframe
+06:51:05.506 [main] INFO  LogsTest - Expected sku is displayed in the search page 1182237
+06:51:05.506 [main] INFO  LogsTest - Expected sku is not in the search page 1182237
+06:51:06.298 [main] DEBUG LogsTest - inside PDP
+06:51:06.740 [main] INFO  LogsTest - Title : Pages - Product Search
+06:51:06.740 [main] ERROR LogsTest - AceNet QA is not Logged in
+06:51:06.744 [main] INFO  LogsTest - CDwindow-D8D3FFC8F450F7B3279AEC48ADE08E4C1
+06:51:06.752 [main] INFO  LogsTest - [CDwindow-D8D3FFC8F450F7B3279AEC48ADE08E4C, CDwindow-29FAB5CD29A481D9B37D0FE6B0B17D73]2

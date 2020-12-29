@@ -1,0 +1,16 @@
+12:44:49.281 [main] INFO  LogsTest - Enter required info for Ship to Customer
+12:46:19.453 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+12:46:19.838 [main] INFO  AcenetHomePageSteps - Select the Store.
+12:46:19.838 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+12:46:29.855 [main] DEBUG LogsTest - 0
+12:46:30.106 [main] INFO  LogsTest - Logged in to first store
+12:46:30.174 [main] DEBUG LogsTest - Store selected and confirmed login
+12:46:30.174 [main] ERROR LogsTest - Store not selected successfully
+12:46:30.811 [main] INFO  LogsTest - Search with Article
+12:46:31.996 [main] INFO  LogsTest - Click on Search button with Article
+12:46:31.997 [main] INFO  AcenetHomePageSteps - Search an article
+12:46:42.505 [main] INFO  LogsTest - switched to iframe
+12:46:43.367 [main] INFO  LogsTest - Click on add basket
+12:46:43.367 [main] INFO  LogsTest - Create New basket popup is opened
+12:46:44.097 [main] INFO  LogsTest - Enter basket name
+12:46:44.791 [main] INFO  LogsTest - New basket has been created

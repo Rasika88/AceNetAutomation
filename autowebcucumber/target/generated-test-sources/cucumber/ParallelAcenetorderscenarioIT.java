@@ -6,8 +6,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         strict = true,
-        features = {"C:/AceHardware/OSAF_Acenet/autowebcucumber/autowebcucumber/src/test/resources/functionaltest/AceNetOrderScenario.feature:36"},
-        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:C:/AceHardware/OSAF_Acenet/autowebcucumber/autowebcucumber/target/cucumber-parallel/5.html"},
+        features = {"C:/Users/srama/Documents/GitHub/AceNetAutomation/autowebcucumber/src/test/resources/functionaltest/AceNetOrderScenario.feature:16"},
+        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:C:/Users/srama/Documents/GitHub/AceNetAutomation/autowebcucumber/target/cucumber-parallel/1.html"},
         monochrome = true,
         glue = {"stepDefinitions"})
 public class ParallelAcenetorderscenarioIT {

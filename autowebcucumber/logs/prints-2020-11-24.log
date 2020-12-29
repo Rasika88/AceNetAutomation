@@ -1,0 +1,15 @@
+23:34:23.444 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:34:23.463 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+23:34:33.484 [main] DEBUG LogsTest - 0
+23:34:33.738 [main] INFO  LogsTest - Logged in to first store
+23:34:33.810 [main] DEBUG LogsTest - Store selected and confirmed login
+23:34:33.811 [main] ERROR LogsTest - Store not selected successfully
+23:34:39.586 [main] INFO  LogsTest - Navigated to product management tab
+23:34:51.497 [main] INFO  LogsTest - Navigated to discovery Assortment Planner page
+23:35:01.995 [main] INFO  LogsTest - switched to iframe
+23:48:37.245 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+23:48:37.615 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:48:37.615 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+23:48:47.686 [main] DEBUG LogsTest - 0
+23:48:47.949 [main] INFO  LogsTest - Logged in to first store
+23:48:48.019 [main] DEBUG LogsTest - Store selected and confirmed login

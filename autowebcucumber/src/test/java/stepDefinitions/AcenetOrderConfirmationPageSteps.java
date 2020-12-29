@@ -25,12 +25,8 @@ public class AcenetOrderConfirmationPageSteps {
 	List<Map<String,String>> dataMap=new ArrayList<Map<String,String>>();
 	ScreenshotCapture screenshotObj;
 	
-	
-	
 	Logger log=LogManager.getLogger("AcenetOrderConfirmationPageSteps");
-	
-	
-	
+		
 	public AcenetOrderConfirmationPageSteps(TestContext testContext) {
 		super();
 		this.testContext = testContext;
@@ -40,9 +36,12 @@ public class AcenetOrderConfirmationPageSteps {
 	
 	@And("^Confirm Orders has been placed$")
 	public void confirmOrder() throws InterruptedException {
+		
+		odrconfirm.switchToOrderConfirmationIframe();
 		odrconfirm.ConfirmOrder();
-		log.info("Confirm Order");
+		log.info("Confirmed the Order placement");
 		screenshotObj.captureScreenshot("Order Confirmation");
+		odrconfirm.switchToDefault();
 	}
 	
 	@Then("^Verify placed order is present in stock reserve list \"([^\"]*)\"$")

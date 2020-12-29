@@ -1,0 +1,15 @@
+07:25:31.532 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+07:25:31.930 [main] INFO  AcenetHomePageSteps - Select the Store.
+07:25:31.931 [main] DEBUG AcenetHomePageSteps - Switch to iframe Home Page
+07:25:41.968 [main] DEBUG LogsTest - 0
+07:25:42.221 [main] INFO  LogsTest - Logged in to first store
+07:25:42.288 [main] DEBUG LogsTest - Store selected and confirmed login
+07:25:42.289 [main] ERROR LogsTest - Store not selected successfully
+07:25:45.047 [main] INFO  LogsTest - Add to cart clicked
+07:25:55.534 [main] INFO  LogsTest - switched to iframe
+07:26:48.742 [main] INFO  LogsTest - create New Basket Button is clicked
+07:27:00.375 [main] INFO  LogsTest - switched to iframe
+07:27:00.375 [main] INFO  LogsTest - Enter all the values t create new basket
+07:27:05.617 [main] INFO  LogsTest - New basket has been created with Automat12
+07:27:16.167 [main] INFO  LogsTest - switched to iframe
+07:29:35.849 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 

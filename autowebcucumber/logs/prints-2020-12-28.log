@@ -1,0 +1,16 @@
+23:53:59.330 [main] INFO  LogsTest - Verify artical detail page Title : ACENET - Item Details
+23:54:09.515 [main] INFO  LogsTest - switched to iframe
+23:54:19.938 [main] INFO  LogsTest - switched to iframe
+23:54:21.955 [main] INFO  LogsTest - Selected shipping method as Ship to Customer
+23:54:32.513 [main] INFO  LogsTest - switched to iframe
+23:54:32.749 [main] INFO  LogsTest - Given product Qty
+23:54:43.707 [main] INFO  LogsTest - switched to iframe
+23:54:43.956 [main] INFO  LogsTest - Enter required info for Ship to Customer
+23:58:15.022 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+23:58:15.438 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:58:17.944 [main] INFO  LogsTest - Select store
+23:58:23.511 [main] INFO  LogsTest - Search with Article
+23:58:23.748 [main] INFO  LogsTest - Click on Search button with Article
+23:58:24.716 [main] DEBUG LogsTest - inside PDP
+23:58:24.759 [main] INFO  LogsTest - Title : Pages - Home
+23:58:24.759 [main] INFO  LogsTest - AceNet QA is Logged in

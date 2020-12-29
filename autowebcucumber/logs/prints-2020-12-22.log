@@ -1,0 +1,16 @@
+23:36:10.192 [main] INFO  LogsTest - Manage produc sub tab selected
+23:36:20.646 [main] INFO  LogsTest - switched to iframe
+23:38:33.788 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+23:38:34.188 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:38:38.639 [main] INFO  LogsTest - Select store
+23:38:44.623 [main] INFO  LogsTest - Navigated to Management Product tab
+23:38:54.181 [main] INFO  LogsTest - Manage produc sub tab selected
+23:39:04.970 [main] INFO  LogsTest - switched to iframe
+23:42:54.008 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+23:42:54.395 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:42:58.830 [main] INFO  LogsTest - Select store
+23:43:04.658 [main] INFO  LogsTest - Navigated to Management Product tab
+23:43:06.906 [main] INFO  LogsTest - Manage produc sub tab selected
+23:43:17.384 [main] INFO  LogsTest - switched to iframe
+23:43:17.880 [main] INFO  LogsTest - Event catagory selected
+23:43:29.660 [main] INFO  LogsTest - switched to iframe

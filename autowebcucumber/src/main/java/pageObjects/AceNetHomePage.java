@@ -6,9 +6,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import CommonMethods.AcenetCommonMethods;
+
 //import org.slf4j.log;
 //import org.slf4j.logFactory;
 import org.apache.logging.log4j.*;
@@ -21,19 +27,18 @@ public class AceNetHomePage {
 	WebDriver driver;
 	Logger log=LogManager.getLogger("LogsTest");
 	ConfigFileReader configOb =new ConfigFileReader();
-
-	//@FindBy(id = "headerDiv")
+	
+	
 	@FindBy(xpath="(//*[contains(text(),'Store')])[2]")
-	WebElement confirmLogin;
-	//Siva added and parameterized
-	//@FindBy(xpath="//*[@id=\"dataTable\"]/tbody/tr[1]/td[1]/a")
+	WebElement confirmLogin;	
 	@FindBy(xpath="//*[@id='bs-select-1-0']/span/span[3]")
-	WebElement firstStore;
-	//@FindBy(xpath = "//img[@class='searchBoxBtn']")
+	WebElement firstStore;	
 	@FindBy(xpath="//*[@id='search-form']/button/img")
-	WebElement SearchButton;
+	WebElement SearchButton;	
 	@FindBy(id= "tbxSearchBox")
 	WebElement searchTextBox;
+	@FindBy(xpath="//*[@class='form-control']")
+	WebElement storeSelection;
 
 	//Initialize driver
 	public AceNetHomePage(WebDriver driver) {
@@ -83,10 +88,26 @@ public class AceNetHomePage {
 		}
 		public void searchAnArticle(String ArticleNo) throws InterruptedException {
 			searchTextBox.sendKeys(ArticleNo);
+			log.info("Search with Article");
 			selenium.Wait.untilPageLoadComplete(driver);
 			SearchButton.click();
-			selenium.Wait.untilPageLoadComplete(driver, (long) 17);
+			log.info("Click on Search button with Article");
 			
+			
+			
+			
+		}
+
+		public void SelectingStore(String storeNumber) throws InterruptedException {
+			
+			storeSelection.sendKeys(storeNumber);
+			Thread.sleep(2000);
+			WebElement webElement = driver.findElement(By.xpath("//*[@class='form-control']"));
+			webElement.sendKeys(Keys.ENTER);
+//			Actions builder = new Actions(driver);   
+//			builder.sendKeys(Keys.ENTER);
+			log.info("Select store");
+			Thread.sleep(5000);
 			
 		}
 
