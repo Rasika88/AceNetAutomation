@@ -44,11 +44,12 @@ public class AceNetProductDetailsPageSteps {
 	@Then("^the user is navigated to the Article Details page$")
 	public void userNavigatedToAticleDetailsPage() throws  Throwable {
 
-		artical.switchToPDPwindow();
+		//artical.switchToPDPwindow();
+		artical.switchToChildwindow();
 		artical.confirmPdPloaded();
-		artical.switchedToiframe();
+		//artical.switchedToiframe();
 		screenshotObj.captureScreenshot("Article Details Page");
-		artical.switchToDefault();
+		//artical.switchToDefault();
 
 	}
 	@And("^continue checkout$")
@@ -140,6 +141,15 @@ public class AceNetProductDetailsPageSteps {
 		screenshotObj.captureScreenshot("Provided productQty");
 		artical.switchToDefault();
 	}
+	@Then("^User enters customer name \"([^\"]*)\"$")
+	public void User_enters_customer_name(String CustomerName) throws InterruptedException
+	{
+		artical.switchedToiframe();
+		artical.EnterCustomerName_ItemDetailPage(CustomerName);
+		screenshotObj.captureScreenshot("Provided CustomerName");
+		artical.switchToDefault();
+	}
+	
 
 	@Then("^Checkout to place an order \"([^\"]*)\"$")
 	public void Checkout_to_place_an_order(String shippingMethod)throws InterruptedException
@@ -282,6 +292,17 @@ public class AceNetProductDetailsPageSteps {
 		artical.ClickAddToCart();
 		screenshotObj.captureScreenshot("Click on AddToCart");
 	}
+	
+	@Then("^Navigating to main screen$")
+	public void Navigating_to_main_screen() throws InterruptedException
+	{
+		artical.switchTomainwindow();
+		artical.confirmPdPloaded();
+		screenshotObj.captureScreenshot("Navigate back to main window");
+		
+	}
+	
+	
 	//Need to move to AcenetProductManagementSteps class
 	@Then("^Verify the added item is present in discovery cart$")
 	public void verify_the_added_item_is_present_in_discovery_cart() throws Throwable {
@@ -405,7 +426,7 @@ public class AceNetProductDetailsPageSteps {
 		artical.switchToiframeRetailAppHost();
 		artical.VendorOrderingOption();
 		artical.switchToDefault();
-		screenshotObj.captureScreenshot("Select Vendors ordering options");
+		screenshotObj.captureScreenshot("Selected Vendors ordering options");
 	}
 
 	@Then("^Verify you are landing in to search page$")
@@ -421,7 +442,7 @@ public class AceNetProductDetailsPageSteps {
 		artical.switchToiframeRetailAppHost();
 		artical.selectVendorSku(sku);
 		artical.switchToDefault();
-		screenshotObj.captureScreenshot("Select Sku verfy Item deatil page");
+		screenshotObj.captureScreenshot("Selected Sku verfy Item deatil page");
 
 	}
 	@Then("^provide sku qty \"([^\"]*)\"$")
@@ -442,7 +463,67 @@ public class AceNetProductDetailsPageSteps {
 		screenshotObj.captureScreenshot("Clicked on createNewBasket from AddToCart page");
 		artical.switchToDefault();
 	}
-
+	
+	@Then("^Delete sku from the basket$")
+	public void Delete_sku_from_the_basket()
+	{
+		artical.switchToiframeRetailAppHost();
+		artical.DeleteSku();
+		screenshotObj.captureScreenshot("Clicked on Delete button and delete the selected sku");
+		//artical.switchToDefault();
+	}
+	
+	@Then("^Click on AddtoBasket button from item detail page$")
+	public void Click_on_AddtoBasket_button_from_item_detail_page() throws InterruptedException
+	{
+		artical.switchedToiframe();
+		artical.clickAddToBasket();
+		screenshotObj.captureScreenshot("Add to Basket button clicked");
+		artical.switchToDefault();
+	}
+	@Then("^create basket with all details \"([^\"]*)\"$")	
+	public void create_basket_with_all_details(String BasketName) throws InterruptedException
+	{
+		artical.switchedToiframe();
+		artical.createNewBasketItemDetailPage(BasketName);
+		screenshotObj.captureScreenshot("Add to Basket button clicked");
+		artical.switchToDefault();
+		
+	}
+	@Then("^Click on addSkusBasket button \"([^\"]*)\"$")	
+	public void Click_on_addSkusBasket_button(String Sku)
+	{
+		//artical.switchToiframeRetailAppHost();
+		artical.ClickAddSkusBasket(Sku);
+		screenshotObj.captureScreenshot("Clicked on addSkusBasket_button to add sku");
+		artical.switchToDefault();
+	}
+	
+	@Then("^Verify selected shipping method present in the shoping Cart \"([^\"]*)\"$")
+	public void Verify_selected_shipping_method_Present_in_the_shoping_Cart(String ChangeShippingMethod)
+	{
+		artical.switchToiframeRetailAppHost();
+		artical.VerifyShipingMethod(ChangeShippingMethod);
+		screenshotObj.captureScreenshot("Verified selected shipping method from shoping Cart");
+		artical.switchToDefault();
+	}
+	
+	@Then("^Select the basket which is present in the shoping cart \"([^\"]*)\"$")	
+	public void Select_the_basket_which_is_present_in_the_shoping_cart(String BasketName)
+	{
+		artical.switchToiframeRetailAppHost();
+		artical.SelectedBasketFromshopingCart(BasketName);
+		screenshotObj.captureScreenshot("Selected the basket which is present in the shoping cart");
+		artical.switchToDefault();
+	}
+	@Then("^Click on GoToShoppingCart button$")	
+	public void Click_on_GoToShoppingCart_button() throws InterruptedException
+	{
+		//artical.switchToiframeRetailAppHost();
+		artical.ClickOnGoToShoppingCart();
+		screenshotObj.captureScreenshot("Clicked on go to Shopping Cart button");
+		artical.switchToDefault();
+	}
 	@Then("^create a new basket with all the details \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
 	public void create_a_new_basket_with_all_the_details(String BasketName, String ShippingMethod, String CustName, String CustPh, String CustEmail) throws Throwable {
 		artical.switchToiframeRetailAppHost();
@@ -478,11 +559,65 @@ public class AceNetProductDetailsPageSteps {
 		screenshotObj.captureScreenshot("Added list of sku in the created basket");
 		artical.switchToDefault();
 	}
-
+	@Then("^Select the basket from shoping cart \"([^\"]*)\"$")	
+	public void Select_the_basket_from_shoping_cart(String BasketName)
+	{
+		//artical.switchToiframeRetailAppHost();
+		artical.SelectedBasketFromshopingCart(BasketName);
+		screenshotObj.captureScreenshot("Selected the basket which is present in the shoping cart");
+		artical.switchToDefault();
+	}
+	@Then("^Add another SkuToBasket \"([^\"]*)\"$")
+	public void AddAnotherSkuToBasket(String AnotherSku) throws Throwable {
+		artical.switchToiframeRetailAppHost();
+		artical.AddSkusToBasket2(AnotherSku);
+		screenshotObj.captureScreenshot("Added list of sku in the created basket");
+		artical.switchToDefault();
+	}
+	
+	
+	@Then("^Change the shipping method \"([^\"]*)\"$")
+	public void Change_the_shipping_method(String ChangeShippingMethod)
+	{
+		//artical.switchToiframeRetailAppHost();
+		artical.ChangeShippingMethod(ChangeShippingMethod);
+		screenshotObj.captureScreenshot("Changed the shipping method ");
+		artical.switchToDefault();
+	}
+	
+	
+	@Then("^Click on checkout once skus added$")
+	public void Click_on_checkout_once_skus_added()
+	{
+		//artical.switchToiframeRetailAppHost();
+		artical.CheckoutOnceSkusAdded();
+		screenshotObj.captureScreenshot("Added list of sku in the created basket");
+		artical.switchToDefault();
+	}
 	@Then("^Add multiples sku in the basket$")
 	public void add_multiples_sku_in_the_basket() throws Throwable {
 
 	}
 
+	@Then("^Verify the added sku count in the web table \"([^\"]*)\"$")	
+	public void Verify_the_added_sku_count_in_the_web_table(String SkuCount)
+	{
+		artical.switchToiframeRetailAppHost();
+		artical.verifyWebTableSkusInBasket(SkuCount);
+		screenshotObj.captureScreenshot("Verified the added sku count in the web table");
+	}
+	@And("^User given customer information \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+	public void User_given_customer_information(String AddressName,String AddressLine,String City,String State,String Zip,String PhNumber)throws Throwable {
+	{
+		
+		artical.switchedToiframe();
+		artical.shipToCustomerinfo(AddressName,AddressLine,City,State,Zip,PhNumber);
+		screenshotObj.captureScreenshot("Customer info has given");
+		artical.switchToDefault();
+	}
+	
+	
+
+}
 
 }

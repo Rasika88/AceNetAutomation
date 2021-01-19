@@ -1,0 +1,14 @@
+23:22:39.266 [main] INFO  LogsTest - Select store
+23:22:46.456 [main] INFO  LogsTest - Add to cart clicked
+23:22:57.615 [main] INFO  LogsTest - switched to iframe
+23:22:58.020 [main] INFO  LogsTest - create New Basket Button is clicked
+23:23:08.558 [main] INFO  LogsTest - switched to iframe
+23:23:08.558 [main] INFO  LogsTest - Enter all the values to create new basket
+23:23:12.221 [main] INFO  LogsTest - Selected shipment type as Ship to Customer
+23:23:13.272 [main] INFO  LogsTest - New basket has been created with Automat12
+23:23:23.816 [main] INFO  LogsTest - switched to iframe
+23:23:38.531 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+23:23:48.679 [main] INFO  LogsTest - switched to iframe
+23:23:48.679 [main] INFO  LogsTest - Sku's are ready to add into the basket
+23:23:52.216 [main] INFO  LogsTest - Sku's added into the basket and close the popup
+23:23:54.286 [main] INFO  LogsTest - Clicked on add sku's to basket to add the list of sku's

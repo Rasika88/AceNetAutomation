@@ -1,0 +1,15 @@
+02:07:14.293 [main] INFO  LogsTest - switched to iframe
+02:07:28.310 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+02:07:38.461 [main] INFO  LogsTest - switched to iframe
+02:07:38.461 [main] INFO  LogsTest - Sku's are ready to add into the basket
+02:07:45.510 [main] INFO  LogsTest - Sku's added into the basket and close the popup
+02:07:59.887 [main] INFO  LogsTest - GoToShoppingCart  Button is clicked
+02:08:10.606 [main] INFO  LogsTest - switched to iframe
+02:08:10.766 [main] INFO  LogsTest - Shipping method is verified
+02:08:21.296 [main] INFO  LogsTest - switched to iframe
+02:08:24.528 [main] INFO  LogsTest - Selected Basket From shopingCart
+02:08:35.074 [main] INFO  LogsTest - switched to iframe
+02:08:35.491 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+02:08:45.622 [main] INFO  LogsTest - switched to iframe
+02:08:45.622 [main] INFO  LogsTest - Sku's are ready to add into the basket
+02:08:51.717 [main] INFO  LogsTest - Sku's added into the basket and close the popup

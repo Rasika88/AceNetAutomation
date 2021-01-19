@@ -1,11 +1,104 @@
-05:37:59.704 [main] INFO  LogsTest - CDwindow-0EAED8D56AB9EBAA0E37E1BFA73F1C351
-05:37:59.734 [main] INFO  LogsTest - [CDwindow-0EAED8D56AB9EBAA0E37E1BFA73F1C35, CDwindow-E56AF02614582A18E802450D30343714]2
-05:38:00.821 [main] INFO  LogsTest - Verify artical detail page Title : ACENET - Item Details
-05:38:10.950 [main] INFO  LogsTest - switched to iframe
-05:38:24.106 [main] INFO  LogsTest - switched to iframe
-05:38:26.645 [main] INFO  LogsTest - Selected shipping method as Ship to Customer
-05:38:37.214 [main] INFO  LogsTest - switched to iframe
-05:38:37.442 [main] INFO  LogsTest - Given product Qty
-05:38:48.272 [main] INFO  LogsTest - switched to iframe
-05:38:48.592 [main] INFO  LogsTest - Enter required info for Ship to Customer
-05:38:57.026 [main] INFO  LogsTest - All required info has provided for Ship to Customer
+22:51:20.093 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+22:51:30.602 [main] INFO  LogsTest - switched to iframe
+22:51:30.602 [main] INFO  LogsTest - Sku's are ready to add into the basket
+22:51:40.611 [main] INFO  LogsTest - Sku's added into the basket and close the popup
+22:51:55.983 [main] INFO  LogsTest - GoToShoppingCart  Button is clicked
+22:52:06.697 [main] INFO  LogsTest - switched to iframe
+22:52:06.768 [main] ERROR LogsTest - Created basket is not present
+22:52:06.838 [main] ERROR LogsTest - Created basket is not present
+22:52:06.907 [main] ERROR LogsTest - Created basket is not present
+22:52:07.059 [main] INFO  LogsTest - Shipping method is verified
+22:52:17.511 [main] INFO  LogsTest - switched to iframe
+22:52:20.981 [main] INFO  LogsTest - Selected Basket From shopingCart
+22:52:31.553 [main] INFO  LogsTest - switched to iframe
+22:52:31.994 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+22:52:42.300 [main] INFO  LogsTest - switched to iframe
+22:52:42.300 [main] INFO  LogsTest - Sku's are ready to add into the basket
+22:52:50.173 [main] INFO  LogsTest - Sku's added into the basket and close the popup
+22:52:51.132 [main] INFO  LogsTest - Changed the shipping methodStock Reserve
+22:53:02.271 [main] INFO  LogsTest - Add to cart clicked
+22:53:12.865 [main] INFO  LogsTest - switched to iframe
+22:53:12.936 [main] ERROR LogsTest - Created basket is not present
+22:53:13.014 [main] ERROR LogsTest - Created basket is not present
+22:53:13.100 [main] ERROR LogsTest - Created basket is not present
+22:53:13.274 [main] INFO  LogsTest - Shipping method is verified
+22:55:36.578 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+22:55:40.973 [main] INFO  AcenetHomePageSteps - Select the Store.
+22:55:46.630 [main] INFO  LogsTest - Select store
+22:56:07.383 [main] INFO  LogsTest - Add to cart clicked
+22:56:17.945 [main] INFO  LogsTest - switched to iframe
+22:56:18.394 [main] INFO  LogsTest - create New Basket Button is clicked
+22:56:28.976 [main] INFO  LogsTest - switched to iframe
+22:56:28.976 [main] INFO  LogsTest - Enter all the values to create new basket
+22:56:33.267 [main] INFO  LogsTest - Selected shipment type as Ship to Customer
+22:56:34.258 [main] INFO  LogsTest - New basket has been created with Automat12
+22:56:44.784 [main] INFO  LogsTest - switched to iframe
+22:57:01.181 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+22:57:11.638 [main] INFO  LogsTest - switched to iframe
+22:57:11.638 [main] INFO  LogsTest - Sku's are ready to add into the basket
+22:57:20.077 [main] INFO  LogsTest - Sku's added into the basket and close the popup
+22:57:35.002 [main] INFO  LogsTest - GoToShoppingCart  Button is clicked
+22:57:45.640 [main] INFO  LogsTest - switched to iframe
+22:57:45.714 [main] ERROR LogsTest - Created basket is not present
+22:57:45.792 [main] ERROR LogsTest - Created basket is not present
+22:57:45.871 [main] ERROR LogsTest - Created basket is not present
+23:02:03.470 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+23:02:05.495 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:02:14.021 [main] INFO  LogsTest - Select store
+23:02:21.535 [main] INFO  LogsTest - Add to cart clicked
+23:02:32.009 [main] INFO  LogsTest - switched to iframe
+23:02:37.664 [main] INFO  LogsTest - create New Basket Button is clicked
+23:02:48.262 [main] INFO  LogsTest - switched to iframe
+23:02:48.264 [main] INFO  LogsTest - Enter all the values to create new basket
+23:02:52.477 [main] INFO  LogsTest - Selected shipment type as Ship to Customer
+23:02:53.499 [main] INFO  LogsTest - New basket has been created with Automat12
+23:03:04.030 [main] INFO  LogsTest - switched to iframe
+23:03:26.291 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+23:03:36.733 [main] INFO  LogsTest - switched to iframe
+23:03:36.733 [main] INFO  LogsTest - Sku's are ready to add into the basket
+23:03:45.808 [main] INFO  LogsTest - Sku's added into the basket and close the popup
+23:04:01.743 [main] INFO  LogsTest - GoToShoppingCart  Button is clicked
+23:04:12.441 [main] INFO  LogsTest - switched to iframe
+23:04:12.516 [main] ERROR LogsTest - Created basket is not present
+23:04:12.588 [main] ERROR LogsTest - Created basket is not present
+23:04:12.661 [main] ERROR LogsTest - Created basket is not present
+23:05:29.260 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+23:05:33.800 [main] INFO  AcenetHomePageSteps - Select the Store.
+23:05:39.534 [main] INFO  LogsTest - Select store
+23:06:02.706 [main] INFO  LogsTest - Add to cart clicked
+23:06:13.305 [main] INFO  LogsTest - switched to iframe
+23:06:13.704 [main] INFO  LogsTest - create New Basket Button is clicked
+23:06:24.283 [main] INFO  LogsTest - switched to iframe
+23:06:24.283 [main] INFO  LogsTest - Enter all the values to create new basket
+23:06:28.537 [main] INFO  LogsTest - Selected shipment type as Ship to Customer
+23:06:29.545 [main] INFO  LogsTest - New basket has been created with Automat12
+23:06:40.066 [main] INFO  LogsTest - switched to iframe
+23:07:01.367 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+23:07:11.968 [main] INFO  LogsTest - switched to iframe
+23:07:11.968 [main] INFO  LogsTest - Sku's are ready to add into the basket
+23:07:20.876 [main] INFO  LogsTest - Sku's added into the basket and close the popup
+23:07:35.982 [main] INFO  LogsTest - GoToShoppingCart  Button is clicked
+23:07:46.712 [main] INFO  LogsTest - switched to iframe
+23:07:46.784 [main] ERROR LogsTest - Created basket is not present
+23:07:46.851 [main] ERROR LogsTest - Created basket is not present
+23:07:46.922 [main] ERROR LogsTest - Created basket is not present
+23:07:50.499 [main] INFO  LogsTest - Selected Basket From shopingCart
+23:08:00.982 [main] INFO  LogsTest - switched to iframe
+23:08:01.435 [main] INFO  LogsTest - Click on add sku's to basket to add the list of sku's
+23:08:11.768 [main] INFO  LogsTest - switched to iframe
+23:08:11.768 [main] INFO  LogsTest - Sku's are ready to add into the basket
+23:08:19.368 [main] INFO  LogsTest - Sku's added into the basket and close the popup
+23:08:34.212 [main] INFO  LogsTest - GoToShoppingCart  Button is clicked
+23:08:45.009 [main] INFO  LogsTest - switched to iframe
+23:08:45.070 [main] ERROR LogsTest - Created basket is not present
+23:08:45.132 [main] ERROR LogsTest - Created basket is not present
+23:08:45.198 [main] ERROR LogsTest - Created basket is not present
+23:08:49.364 [main] INFO  LogsTest - Selected Basket From shopingCart
+23:08:59.965 [main] INFO  LogsTest - switched to iframe
+23:09:00.460 [main] INFO  LogsTest - Clicked on delete button
+23:09:01.210 [main] INFO  LogsTest - Clicked on delete confirmation ok button
+23:09:16.333 [main] INFO  LogsTest - GoToShoppingCart  Button is clicked
+23:09:26.981 [main] INFO  LogsTest - switched to iframe
+23:09:27.071 [main] ERROR LogsTest - Created basket is not present
+23:09:27.152 [main] ERROR LogsTest - Created basket is not present
+23:09:27.227 [main] ERROR LogsTest - Created basket is not present

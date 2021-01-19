@@ -1,6 +1,7 @@
 package managers;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import pageObjects.AceNetHomePage;
 import pageObjects.AcenetArticleDeatilsPage;
@@ -10,15 +11,19 @@ import pageObjects.ProductManagement;
 
 public class PageObjectManager {
 
-	private WebDriver driver;
+	private RemoteWebDriver driver;
 	private AceNetHomePage AceHp;
 	private AcenetArticleDeatilsPage art;
 	private AcenetOrdersConfirmationPage orderconfirm;
 	private ProductManagement pmgnmt;
 	
-	public PageObjectManager(WebDriver driver) {
+	public PageObjectManager(RemoteWebDriver driver) {
 		this.driver = driver;
+		System.out.println("PageObjectManager");
+		System.out.println(this.driver );
 	}
+	
+	
 	public AceNetHomePage getAceNetHomePage() {
 		return (AceHp==null)?AceHp=new AceNetHomePage(driver):AceHp;
 	}

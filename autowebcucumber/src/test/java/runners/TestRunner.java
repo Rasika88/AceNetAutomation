@@ -31,7 +31,7 @@ import zephyr.utils.CreateCycleInZephyr;
 	//plugin = { "pretty","com.epam.reportportal.cucumber.StepReporter"},
 	plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
 	monochrome = true
-	,tags= {"@PlaceOrderWithShiptoCustomer"}
+	,tags= {"@VerifySKUCountAfterAddOrDeleteFromTheBasket"}
 	//,tags= {"@AritcleDetailsPage,@PlaceStockReserveOrder,@PlaceOrderShipToRetiler,@AcenetHomePageSearchAnArticleTestSteps"}
 	
 	)

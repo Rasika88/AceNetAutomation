@@ -1,0 +1,14 @@
+10:00:25.759 [main] INFO  LogsTest - [CDwindow-FCB8089DA2A10BAA29EBD47145B0573A, CDwindow-17F3679FCA04B6FA45D7B2D49A7537AA]2
+10:00:26.907 [main] INFO  LogsTest - Verify artical detail page Title : ACENET - Item Details
+10:00:37.031 [main] INFO  LogsTest - switched to iframe
+10:00:47.423 [main] INFO  LogsTest - switched to iframe
+10:00:48.338 [main] INFO  LogsTest - Selected shipping method as Stock Reserve
+10:00:58.957 [main] INFO  LogsTest - switched to iframe
+10:00:59.172 [main] INFO  LogsTest - Given product Qty
+10:01:09.725 [main] INFO  LogsTest - switched to iframe
+10:01:10.017 [main] INFO  LogsTest - Express checkout has done PDP
+10:01:12.804 [main] INFO  LogsTest - Express checkout has done
+10:01:23.295 [main] INFO  AcenetOrdersConfirmationPage - switched to order confirmation iframe
+10:01:23.841 [main] INFO  AcenetOrdersConfirmationPage - Stock Reserve Order No is : 8015627
+10:01:23.842 [main] INFO  AcenetOrderConfirmationPageSteps - Confirmed the Order placement
+11:42:10.599 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 

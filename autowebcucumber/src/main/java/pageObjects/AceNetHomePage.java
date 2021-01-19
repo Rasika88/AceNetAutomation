@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -24,7 +25,7 @@ import selenium.Wait;
 
 
 public class AceNetHomePage {
-	WebDriver driver;
+	RemoteWebDriver driver;
 	Logger log=LogManager.getLogger("LogsTest");
 	ConfigFileReader configOb =new ConfigFileReader();
 	
@@ -41,8 +42,9 @@ public class AceNetHomePage {
 	WebElement storeSelection;
 
 	//Initialize driver
-	public AceNetHomePage(WebDriver driver) {
+	public AceNetHomePage(RemoteWebDriver driver) {
 		this.driver = driver;
+		System.out.println(this.driver);
 		PageFactory.initElements(driver, this);
 	}
 	/*//Initializing driver
@@ -54,7 +56,8 @@ public class AceNetHomePage {
 		/* Verifying Page load*/ 
 		public void loadPage() {
 			driver.get(configOb.getApplicationUrl());
-			selenium.Wait.untilPageLoadComplete(driver);
+			//driver.get("https://qqiaa2:Qu@lity1@sts.npaceservices.com/adfs/ls/wia?wa=wsignin1.0&wtrealm=https%3a%2f%2fqaacenet.npaceservices.com%2f&wctx=rm%3d0%26id%3dpassive%26ru%3d%252f&wct=2020-08-06T06%3a38%3a22Z");
+			//selenium.Wait.untilPageLoadComplete(driver);
 			log.info("Login success and user is on AceNet Home Page ");
 
 		}

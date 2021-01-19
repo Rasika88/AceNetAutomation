@@ -40,6 +40,7 @@ public class AcenetHomePageSteps {
 		super();
 		this.testContext = testContext;
 		page=testContext.getPageObjectManager().getAceNetHomePage();
+		System.out.println(page);
 		screenshotObj=new ScreenshotCapture(testContext);
 	}
 	

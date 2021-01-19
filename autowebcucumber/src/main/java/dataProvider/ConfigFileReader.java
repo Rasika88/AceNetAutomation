@@ -12,11 +12,12 @@ import enums.EnvironmentType;
 public class ConfigFileReader {	
 	private Properties properties;
 	private final String propertyFilePath= System.getProperty("user.dir")+"//configs//Configuration.properties";
-///Users/retailqe/eclipse-workspace/autowebcucumber/configs/Configuration.properties
+	
 	public ConfigFileReader(){
 		BufferedReader reader;
 		try {
 			reader = new BufferedReader(new FileReader(propertyFilePath));
+			System.out.println(propertyFilePath);
 			properties = new Properties();
 			try {
 				properties.load(reader);
@@ -32,6 +33,7 @@ public class ConfigFileReader {
 
 	public String getDriverPath(){
 		String driverPath = properties.getProperty("driverPath");
+		System.out.println(driverPath);
 		if(driverPath!= null) return driverPath;
 		else throw new RuntimeException("Driver Path not specified in the Configuration.properties file for the Key:driverPath");		
 	}
@@ -50,7 +52,11 @@ public class ConfigFileReader {
 
 	public String getApplicationUrl() {
 		String url = properties.getProperty("url");
-		if(url != null) return url;
+		System.out.println("url"+ url);
+		if(url != null)
+		{
+			return url;
+		}
 		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
 	}
 
@@ -74,7 +80,7 @@ public class ConfigFileReader {
 		if(windowSize != null) return Boolean.valueOf(windowSize);
 		return true;
 	}
-	
+
 	public String getReportConfigPath(){
 		String reportConfigPath =System.getProperty("user.dir")+properties.getProperty("reportConfigPath");
 		return reportConfigPath;		
@@ -84,7 +90,7 @@ public class ConfigFileReader {
 		if(zephyrEnabled != null) return Boolean.valueOf(zephyrEnabled);
 		return false;
 	}
-	
+
 	public boolean isProxyEnabled(){
 		String proxyEnabled = properties.getProperty("proxyEnabled");
 		if(proxyEnabled != null) 
@@ -101,7 +107,7 @@ public class ConfigFileReader {
 		}
 		else throw new RuntimeException("Proxy Host not specified in the Configuration.properties file for the Key:proxyHost");
 	}
-	
+
 	public int getProxyPort(){
 		String proxyPort = properties.getProperty("proxyPort");
 		if(proxyPort != null) 

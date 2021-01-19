@@ -1,0 +1,152 @@
+01:46:46.047 [main] INFO  LogsTest - Select store
+01:46:53.470 [main] INFO  LogsTest - Add to cart clicked
+01:56:33.261 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+01:56:37.309 [main] INFO  AcenetHomePageSteps - Select the Store.
+01:56:42.110 [main] INFO  LogsTest - Select store
+01:56:49.452 [main] INFO  LogsTest - Add to cart clicked
+02:01:27.333 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+02:01:30.466 [main] INFO  AcenetHomePageSteps - Select the Store.
+02:01:35.356 [main] INFO  LogsTest - Select store
+02:01:57.540 [main] INFO  LogsTest - Add to cart clicked
+02:12:10.498 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+02:12:14.167 [main] INFO  AcenetHomePageSteps - Select the Store.
+02:12:19.031 [main] INFO  LogsTest - Select store
+02:12:41.039 [main] INFO  LogsTest - Add to cart clicked
+02:15:48.339 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+02:15:50.141 [main] INFO  AcenetHomePageSteps - Select the Store.
+02:15:57.537 [main] INFO  LogsTest - Select store
+02:16:04.899 [main] INFO  LogsTest - Add to cart clicked
+02:21:29.602 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+02:21:33.077 [main] INFO  AcenetHomePageSteps - Select the Store.
+02:21:37.965 [main] INFO  LogsTest - Select store
+02:21:45.263 [main] INFO  LogsTest - Add to cart clicked
+02:21:55.770 [main] INFO  LogsTest - switched to iframe
+02:33:30.028 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+02:33:33.567 [main] INFO  AcenetHomePageSteps - Select the Store.
+02:33:38.143 [main] INFO  LogsTest - Select store
+02:33:45.441 [main] INFO  LogsTest - Add to cart clicked
+02:33:58.439 [main] INFO  LogsTest - switched to iframe
+02:34:28.749 [main] ERROR LogsTest - Created basket is not present
+02:35:58.459 [main] ERROR LogsTest - Created basket is not present
+02:40:22.134 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+02:40:25.163 [main] INFO  AcenetHomePageSteps - Select the Store.
+02:40:29.742 [main] INFO  LogsTest - Select store
+02:40:37.060 [main] INFO  LogsTest - Add to cart clicked
+02:40:48.325 [main] INFO  LogsTest - switched to iframe
+02:42:59.175 [main] ERROR LogsTest - Created basket is not present
+02:43:12.559 [main] ERROR LogsTest - Created basket is present
+03:06:56.740 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:06:58.472 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:07:05.261 [main] INFO  LogsTest - Select store
+03:07:12.639 [main] INFO  LogsTest - Add to cart clicked
+03:07:24.787 [main] INFO  LogsTest - switched to iframe
+03:08:02.563 [main] ERROR LogsTest - Created basket is not present
+03:11:28.372 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:11:31.753 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:11:36.622 [main] INFO  LogsTest - Select store
+03:11:54.104 [main] INFO  LogsTest - Add to cart clicked
+03:12:04.694 [main] INFO  LogsTest - switched to iframe
+03:12:28.323 [main] ERROR LogsTest - Created basket is not present
+03:12:38.803 [main] ERROR LogsTest - Created basket is not present
+03:12:49.691 [main] ERROR LogsTest - Created basket is not present
+03:14:35.915 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:14:39.389 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:14:44.060 [main] INFO  LogsTest - Select store
+03:14:51.397 [main] INFO  LogsTest - Add to cart clicked
+03:15:01.897 [main] INFO  LogsTest - switched to iframe
+03:15:09.843 [main] ERROR LogsTest - Created basket is not present
+03:15:15.554 [main] ERROR LogsTest - Created basket is not present
+03:15:18.210 [main] ERROR LogsTest - Created basket is not present
+03:15:20.992 [main] ERROR LogsTest - Created basket is not present
+03:15:23.070 [main] ERROR LogsTest - Created basket is not present
+03:15:25.331 [main] ERROR LogsTest - Created basket is not present
+03:15:27.065 [main] ERROR LogsTest - Created basket is not present
+03:15:28.866 [main] ERROR LogsTest - Created basket is not present
+03:15:31.032 [main] ERROR LogsTest - Created basket is not present
+03:15:40.226 [main] ERROR LogsTest - Created basket is not present
+03:17:29.156 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:17:32.414 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:17:37.191 [main] INFO  LogsTest - Select store
+03:17:44.574 [main] INFO  LogsTest - Add to cart clicked
+03:17:55.747 [main] INFO  LogsTest - switched to iframe
+03:18:59.299 [main] ERROR LogsTest - Created basket is not present
+03:19:00.501 [main] ERROR LogsTest - Created basket is not present
+03:19:01.732 [main] ERROR LogsTest - Created basket is not present
+03:19:03.000 [main] ERROR LogsTest - Created basket is not present
+03:19:04.186 [main] ERROR LogsTest - Created basket is not present
+03:19:06.114 [main] ERROR LogsTest - Created basket is not present
+03:19:07.637 [main] ERROR LogsTest - Created basket is not present
+03:19:08.790 [main] ERROR LogsTest - Created basket is not present
+03:19:09.931 [main] ERROR LogsTest - Created basket is not present
+03:19:11.290 [main] ERROR LogsTest - Created basket is not present
+03:23:47.342 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:23:51.086 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:23:55.945 [main] INFO  LogsTest - Select store
+03:24:03.309 [main] INFO  LogsTest - Add to cart clicked
+03:24:14.136 [main] INFO  LogsTest - switched to iframe
+03:24:14.245 [main] ERROR LogsTest - Created basket is not present
+03:24:14.352 [main] ERROR LogsTest - Created basket is not present
+03:24:14.456 [main] ERROR LogsTest - Created basket is not present
+03:24:14.559 [main] ERROR LogsTest - Created basket is not present
+03:24:14.659 [main] ERROR LogsTest - Created basket is not present
+03:24:14.766 [main] ERROR LogsTest - Created basket is not present
+03:24:14.883 [main] ERROR LogsTest - Created basket is not present
+03:24:15.049 [main] ERROR LogsTest - Created basket is not present
+03:24:15.185 [main] ERROR LogsTest - Created basket is not present
+03:24:15.681 [main] ERROR LogsTest - Created basket is not present
+03:26:21.055 [main] ERROR LogsTest - Created basket is present
+03:27:52.459 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:27:53.970 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:28:01.083 [main] INFO  LogsTest - Select store
+03:28:18.802 [main] INFO  LogsTest - Add to cart clicked
+03:28:29.442 [main] INFO  LogsTest - switched to iframe
+03:28:29.559 [main] ERROR LogsTest - Created basket is not present
+03:28:29.678 [main] ERROR LogsTest - Created basket is not present
+03:28:29.789 [main] ERROR LogsTest - Created basket is not present
+03:28:29.904 [main] ERROR LogsTest - Created basket is not present
+03:28:30.024 [main] ERROR LogsTest - Created basket is not present
+03:28:30.138 [main] ERROR LogsTest - Created basket is not present
+03:28:30.256 [main] ERROR LogsTest - Created basket is not present
+03:28:30.364 [main] ERROR LogsTest - Created basket is not present
+03:28:30.488 [main] ERROR LogsTest - Created basket is not present
+03:28:30.653 [main] ERROR LogsTest - Created basket is not present
+03:30:47.476 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:30:47.896 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:32:25.965 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:33:11.747 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:33:25.186 [main] INFO  LogsTest - Select store
+03:33:32.647 [main] INFO  LogsTest - Add to cart clicked
+03:33:43.200 [main] INFO  LogsTest - switched to iframe
+03:36:00.402 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+03:36:21.745 [main] INFO  AcenetHomePageSteps - Select the Store.
+03:36:28.329 [main] INFO  LogsTest - Select store
+03:36:35.621 [main] INFO  LogsTest - Add to cart clicked
+03:36:46.100 [main] INFO  LogsTest - switched to iframe
+03:37:42.516 [main] ERROR LogsTest - Created basket is not present
+03:37:50.360 [main] ERROR LogsTest - Created basket is not present
+03:37:52.266 [main] ERROR LogsTest - Created basket is not present
+03:37:53.692 [main] ERROR LogsTest - Created basket is not present
+03:37:55.024 [main] ERROR LogsTest - Created basket is not present
+03:37:56.728 [main] ERROR LogsTest - Created basket is not present
+03:37:58.087 [main] ERROR LogsTest - Created basket is not present
+03:37:59.537 [main] ERROR LogsTest - Created basket is not present
+03:38:01.231 [main] ERROR LogsTest - Created basket is not present
+03:38:02.970 [main] ERROR LogsTest - Created basket is not present
+06:25:51.794 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+06:25:55.161 [main] INFO  AcenetHomePageSteps - Select the Store.
+06:26:00.350 [main] INFO  LogsTest - Select store
+06:26:07.843 [main] INFO  LogsTest - Add to cart clicked
+06:26:19.810 [main] INFO  LogsTest - switched to iframe
+06:26:36.694 [main] ERROR LogsTest - Created basket is not present
+06:26:38.720 [main] ERROR LogsTest - Created basket is not present
+06:26:39.847 [main] ERROR LogsTest - Created basket is not present
+06:26:41.012 [main] ERROR LogsTest - Created basket is not present
+06:26:42.169 [main] ERROR LogsTest - Created basket is not present
+06:26:43.734 [main] ERROR LogsTest - Created basket is not present
+06:26:45.306 [main] ERROR LogsTest - Created basket is not present
+06:26:46.923 [main] ERROR LogsTest - Created basket is not present
+06:27:06.913 [main] ERROR LogsTest - Created basket is not present
+06:27:39.683 [main] ERROR LogsTest - Created basket is not present
+06:30:01.511 [main] INFO  LogsTest - Login success and user is on AceNet Home Page 
+06:30:05.164 [main] INFO  AcenetHomePageSteps - Select the Store.
+06:30:09.944 [main] INFO  LogsTest - Select store

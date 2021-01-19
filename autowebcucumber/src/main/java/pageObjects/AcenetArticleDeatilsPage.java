@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.sql.Timestamp;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -45,6 +46,17 @@ public class AcenetArticleDeatilsPage {
 	WebElement storeLocation;
 	@FindBy(xpath = "//input[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_txtQty']")
 	WebElement orderQty;
+	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_btnAddtoBasket']")
+	WebElement AddtoBasket_ItemDetailPage;
+	@FindBy(xpath = "//*[@id='rdNewBasket']")
+	WebElement newBasket_Option;
+	@FindBy(xpath = "//*[@id='txtBasketRefID']")
+	WebElement basketName_text;
+	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_txtCustomerName']")
+	WebElement customerName;
+	@FindBy(xpath = "//*[@id='divBasketPopUp']/div[2]/input")
+	WebElement addToBasket_button;
+
 	@FindBy(xpath ="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_divComments']/span")
 	WebElement comment;
 	@FindBy(xpath = "//*[@id='divErrorInfo']/div[1]/div[1]/div[2]/a/img")
@@ -75,6 +87,8 @@ public class AcenetArticleDeatilsPage {
 	WebElement expressCheckout;
 	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_sellingData_lblRscQty']")
 	WebElement rscQtycheck_ItemDeatilsPage;
+	@FindBy(xpath = "//*[contains(text(),'Item Already Exist')]")
+	WebElement	ItemAlreadyExist;
 	@FindBy(xpath = "//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_shipMethod_txtCustomerName']")
 	WebElement customerName_CustPriority;
 	@FindBy(xpath = "//input[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnCheckout']")
@@ -236,7 +250,6 @@ public class AcenetArticleDeatilsPage {
 	WebElement browseProductVendor_Tab;
 	@FindBy(xpath="(//*[contains(text(),'Event Planner')])[2]")
 	WebElement EventPlanner_Subtab;
-
 	@FindBy(xpath="//*[@id='contentMainPlaceHolder_quickListPages_lstOther_spanOther_5']/a")
 	WebElement vendorCatagorySelection;
 	@FindBy(xpath="//*[@id='divEvt']/span[2]/span/span[1]")
@@ -246,7 +259,6 @@ public class AcenetArticleDeatilsPage {
 	WebElement eventCatry;
 	@FindBy(xpath="//*[@id='btnGo']")
 	WebElement eventPlanner_gobutton;
-
 	@FindBy(xpath="//*[@id='MainContentPlaceHolder_VendorFilterOptions_rdnBtnsVenType_0']")
 	WebElement vendorTypeFilter;
 	@FindBy(xpath="//*[@id='divCharOption_14']")
@@ -284,10 +296,9 @@ public class AcenetArticleDeatilsPage {
 	@FindBy(xpath="//*[@id='ctl00_MainContent_radGridShoppingCart_ctl00']/tbody/tr[2]/td[4]/a")
 	WebElement discoveryBasketSelection;
 	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnCheckOut']")
-	WebElement eventPlannerCheckut;//*[@id="btnExpCheckOut2"]
+	WebElement eventPlannerCheckut;
 	@FindBy(xpath="//*[contains(text(),'PROMO/RETAIL EXEC - OUTDOOR DECOR')]")
 	WebElement eventPlannerBasketSelection;
-
 	@FindBy(xpath="//*[@id='MainContent_txtSKUSearch']")
 	WebElement DiscoveryTab_SkuSearch;
 	@FindBy(xpath="//*[contains(text(),'10051')]")
@@ -298,12 +309,24 @@ public class AcenetArticleDeatilsPage {
 	WebElement eventPlannerSku;
 	@FindBy(id= "tbxSearchBox")
 	WebElement searchTextBox;
-
 	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_updPnlConfirm']/div[5]/div[5]/table/tbody/tr[2]/td[2]/input")
 	WebElement cancel;
-	// The above need to move to Product management class
-
-	public void switchToPDPwindow() throws InterruptedException {
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnGoToShoppingCart']")
+	WebElement goToShoppingCart_Button;
+	@FindBy(xpath="(//*[contains(text(),'Automat12')])[1]")
+	WebElement CreatedBasket;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_ddlShipMethod']")
+	WebElement SelectShippingMethod_CartPage;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_ddlShipMethod']/option[2]")
+	WebElement SelectShiptoRetailer_CartPageShippingmethod;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_ddlShipMethod']/option[1]")
+	WebElement SelectStockReserve_CartPageShippingmethod;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_btnDelete']")
+	WebElement deleteButton;
+	@FindBy(xpath="//*[@id='ctl00_ctl00_contentMainPlaceHolder_MainContent_Submit2']")
+	WebElement deleteConfirm_popup;
+	public void switchToPDPwindow() throws InterruptedException 
+	{
 		log.debug("inside PDP");
 		selenium.Wait.untilPageLoadComplete(driver);
 		String parentWindowHandle= driver.getWindowHandle();
@@ -311,7 +334,8 @@ public class AcenetArticleDeatilsPage {
 		String expectedTitle = "Pages - Home";
 		String actualTitle = driver.getTitle();
 		log.info("Title : " + actualTitle);
-		if (actualTitle.contentEquals(expectedTitle)) { 
+		if (actualTitle.contentEquals(expectedTitle)) 
+		{ 
 			log.info("AceNet QA is Logged in");
 		}
 		else
@@ -331,11 +355,26 @@ public class AcenetArticleDeatilsPage {
 		}
 	}
 
+
 	public void confirmPdPloaded() throws InterruptedException {
 		selenium.Wait.untilPageLoadComplete(driver);
 		String actualTitle1 = driver.getTitle();
 		log.info("Verify artical detail page Title : " + actualTitle1);
 
+	}
+
+	public void switchToChildwindow() throws InterruptedException 
+	{
+		Set<String> windowhandle=driver.getWindowHandles();
+		Iterator<String> iter=windowhandle.iterator();
+		String mainWindow=iter.next();
+		System.out.println("mainWindow"+ mainWindow);
+		String childwindow=iter.next();
+		System.out.println("childwindow"+ childwindow);
+		driver.switchTo().window(childwindow);
+		//driver.close();
+		//Thread.sleep(3000);
+		//driver.switchTo().window(mainWindow);
 	}
 
 	public void switchedToiframe() throws InterruptedException {
@@ -527,7 +566,7 @@ public class AcenetArticleDeatilsPage {
 		}
 		else if(ShippingMethod.equalsIgnoreCase("Customer Priority Order"))
 		{
-
+			Thread.sleep(7000);
 			selenium.Wait.explicit(driver,dropDown);
 			dropDown.click(); 
 			selenium.Wait.explicit(driver,customerPriorityorder_dropdown);
@@ -546,6 +585,14 @@ public class AcenetArticleDeatilsPage {
 		orderQty.sendKeys(productQty);
 		log.info("Given product Qty");
 	}
+	public void clickAddToBasket()
+	{
+		selenium.Wait.explicit(driver, AddtoBasket_ItemDetailPage);
+		AddtoBasket_ItemDetailPage.click();
+		log.info("AddtoBasket button clicked");
+	}
+
+
 	public void enterOrderQtyShipToRetailer() {
 		log.info("Order qty method");
 		setOrderQtyShipToRetailer();
@@ -557,8 +604,21 @@ public class AcenetArticleDeatilsPage {
 		orderQty.sendKeys("1");
 
 	}
+	public void createNewBasketItemDetailPage(String BasketName) 	
+	{
+		newBasket_Option.click();
+		basketName_text.sendKeys(BasketName);
+		addToBasket_button.click();
+		//driver.close();
+		//switchToDefault();
+		log.info("Basket created from Item detail page");
+	}
+	public void EnterCustomerName_ItemDetailPage(String CustomerName)
+	{
 
-
+		customerName.sendKeys(CustomerName);
+		log.info("Customer name has entered");
+	}
 	public void expressCheckOutSTRClick() {
 
 
@@ -777,16 +837,20 @@ public class AcenetArticleDeatilsPage {
 		//using it for PlaceDropshipOrder,PlaceOrderWithShiptoCustomer
 		System.out.println(shipType);
 		if(shipType.equalsIgnoreCase("Stock Reserve"))
-		{				
+		{	
+			selenium.Wait.explicit(driver, expressCheckout);
 			expressCheckout.click();
-			log.info("Express checkout has done PDP");			
+			log.info("Express checkout has done PDP");
+			selenium.Wait.explicit(driver, expressCheckout_basket);
 			expressCheckout_basket.click();		
 
 			log.info("Express checkout has done");
 		}
 		else if(shipType.contains("Ship to Retailer"))
 		{
+			selenium.Wait.explicit(driver, expressCheckout);
 			expressCheckout.click();
+			selenium.Wait.explicit(driver, checkout_ShipToRetailer);
 			checkout_ShipToRetailer.click();
 			log.info("Express checkout has done for Ship To Retailer");
 			/*if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
@@ -797,39 +861,12 @@ public class AcenetArticleDeatilsPage {
 		}
 		else if(shipType.contains("Ship to Customer"))
 		{
+			selenium.Wait.explicit(driver, expressCheckout);
 			expressCheckout.click();
-			log.info("Enter required info for Ship to Customer");
-			shippingAddressName.sendKeys("Customer");
-			shippingAddressLine.sendKeys("Test address");
-			shippingAddressCity.sendKeys("Little rock");
-			shippingAddressSte.sendKeys("AR - Arkansas");
-
-			System.out.println(shippingAddressPhone.getText());	
-			Thread.sleep(5000);
-			JavascriptExecutor jse = (JavascriptExecutor)driver;
-			//jse.executeScript("document.getElementById('elementID').setAttribute('value', 'new value for element')");
-			jse.executeScript("document.getElementById('ctl00_ctl00_contentMainPlaceHolder_MainContent_txtPhone').value='1234567878'");
-					//shippingAddressPhone.sendKeys("1231231234");
-			shippingAddressZip.sendKeys("72211");
-			//shippingAddressPhone.sendKeys("1231231234");
-			log.info("All required info has provided for Ship to Customer");			
-			validate.click();
-			phone_popup.click();
-			//Thread.sleep(3000);
-			shippingAddressPhone.click();
-			shippingAddressPhone.sendKeys("1231231234");
-
-			continue_Button.click();
-			checkout_ShipToRetailer.click();
-			if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
-
-				log.info("Order has placed successfully");
-			else
-				log.error("Order has not placed successfully");
-
 		}
 		else if(shipType.contains("RSC Pickup"))
 		{
+			selenium.Wait.explicit(driver, expressCheckout);
 			expressCheckout.click();
 			log.info("Click on Checkout button");
 			/*log.info("providing RSC pickup deatils");
@@ -850,6 +887,7 @@ public class AcenetArticleDeatilsPage {
 		}
 		else if(shipType.equalsIgnoreCase("DropShip"))
 		{
+			selenium.Wait.explicit(driver, expressCheckout);
 			expressCheckout.click();
 			log.info("Clicked on express checkout process");
 		}
@@ -914,6 +952,26 @@ public class AcenetArticleDeatilsPage {
 		log.info("Clicked on continue in the popup");
 		dropshipOK_Button.click();
 		log.info("Order has been placed");
+	}
+	public void shipToCustomerinfo(String addressName, String addressLine, String city, String state, String Zip, String phNumber)
+	{
+		log.info("Enter required info for Ship to Customer");
+		shippingAddressName.sendKeys(addressName);
+		shippingAddressLine.sendKeys(addressLine);
+		shippingAddressCity.sendKeys(city);
+		shippingAddressSte.sendKeys(state);
+		shippingAddressZip.sendKeys(Zip);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;			
+		jse.executeScript("document.getElementById('ctl00_ctl00_contentMainPlaceHolder_MainContent_txtPhone').value='1234567654'");
+		log.info("All required info has provided for Ship to Customer");			
+		validate.click();
+		continue_Button.click();
+		checkout_ShipToRetailer.click();
+		if(OrderPlacedConfirmation.equals(" Your Order was successfully submitted. "))
+
+			log.info("Order has placed successfully");
+		else
+			log.error("Order has not placed successfully");
 	}
 	public void MultipleSkuOrderCheckout(String shipType) throws InterruptedException 
 	{
@@ -1281,7 +1339,28 @@ public class AcenetArticleDeatilsPage {
 		createNewBasket_Button.click();
 		log.info("create New Basket Button is clicked");
 	}
-
+	public void ClickAddSkusBasket(String Sku)
+	{
+		selenium.Wait.explicit(driver, addSkusBasket);
+		addSkusBasket.click();
+		log.info("Clicked on add sku's to basket to add the list of sku's");	
+		switchToiframeIfrmQuickEntry();
+		log.info("Sku's are ready to add into the basket");
+		addSku1.sendKeys(Sku);		
+		addQty1.sendKeys("1");
+		//addSku2.sendKeys("20267");
+		//addQty2.sendKeys("1");		
+		addSkusBasket.click();
+		String expectedText= ItemAlreadyExist.getText();
+		if(expectedText.equalsIgnoreCase("Item Already Exist"))
+		{
+			log.info("Item Already Exist");
+		}
+		else
+		{
+			log.error("Item Already Exist is not present");
+		}
+	}
 	public void CreateNewBasketDetails(String basketName2, String shippingMethod, String custName2, String custPh2, String custEmail2) throws InterruptedException {
 
 		log.info("Enter all the values to create new basket");
@@ -1310,7 +1389,8 @@ public class AcenetArticleDeatilsPage {
 		log.info("New basket has been created with "+basketName2);
 	}
 
-	public void AddSkusToBasket2(String Sku) {
+	public void AddSkusToBasket2(String Sku) throws InterruptedException {
+		System.out.println("Sku"+Sku);
 		selenium.Wait.explicit(driver, addSkusBasket);
 		addSkusBasket.click();
 		log.info("Click on add sku's to basket to add the list of sku's");	
@@ -1321,10 +1401,20 @@ public class AcenetArticleDeatilsPage {
 		//addSku2.sendKeys("20267");
 		//addQty2.sendKeys("1");		
 		addSkusBasket.click();
-		closeBasket_popup.click();
+		closeBasket_popup.click(); 
+		Thread.sleep(3000);
 		log.info("Sku's added into the basket and close the popup");
-		driver.switchTo().defaultContent();
+		/*driver.switchTo().defaultContent();
 		switchToiframeRetailAppHost();
+		selenium.Wait.explicit(driver,checkout);
+		checkout.click();
+		log.info("Click on Checkout button after added Sku");*/
+	}
+
+	public void CheckoutOnceSkusAdded()
+	{
+		//driver.switchTo().defaultContent();
+		//switchToiframeRetailAppHost();
 		selenium.Wait.explicit(driver,checkout);
 		checkout.click();
 		log.info("Click on Checkout button after added Sku");
@@ -1373,6 +1463,145 @@ public class AcenetArticleDeatilsPage {
 			log.info("Order has placed successfully");
 		}
 		log.error("Order has not placed successfully");
+	}
+
+	public void ClickOnGoToShoppingCart() throws InterruptedException {
+
+
+		Thread.sleep(5000);
+		String button=goToShoppingCart_Button.getText();
+		goToShoppingCart_Button.isEnabled();
+		System.out.println("button"+ button);
+		goToShoppingCart_Button.click();
+		log.info("GoToShoppingCart  Button is clicked");
+		CreatedBasket.getText();
+	}
+
+	public void VerifyShipingMethod(String changeShippingMethod) {
+		// TODO Auto-generated method stub
+		String beforeXpath="//*[contains(@class,'rgMasterTable')]/tbody/tr[";
+		String afterXpath="]/td[2]";		
+		String createdBasketName="Automate12";
+		for(int i=2;i<5;i++)
+		{
+			String actualXpath=beforeXpath+i+afterXpath;
+			WebElement element=driver.findElement(By.xpath(actualXpath));			
+			if(element.getText().contains(createdBasketName))
+			{
+				log.info("Created basket is present");	
+				String ActualShippingMethod= driver.findElement(By.xpath("//*[contains(@class,'rgMasterTable')]/tbody/tr["+i+"]/td[6]")).getText();			
+				System.out.println("ActualSkuCount "+ActualShippingMethod);
+				if(ActualShippingMethod.equalsIgnoreCase(changeShippingMethod))
+				{
+					log.info("ShippingMethod in the basket is verified");
+				}
+				else
+				{
+					log.error("ShippingMethod in the basket is not show as expected");
+				}
+
+				break;
+			}
+			else
+			{
+
+				log.error("Created basket is not present");
+			}
+		}
+
+		selenium.Wait.explicit(driver,CreatedBasket);
+		driver.getTitle();
+		log.info("Shipping method is verified");
+	}
+
+	public void SelectedBasketFromshopingCart(String basketName2) {
+		// TODO Auto-generated method stub
+
+		selenium.Wait.explicit(driver,CreatedBasket);
+		String createdBasket=CreatedBasket.getText();
+		if(basketName2.equalsIgnoreCase(createdBasket))
+		CreatedBasket.click();
+		log.info("Selected Basket From shopingCart");
+	}
+	public void DeleteSku()
+	{
+		selenium.Wait.explicit(driver, deleteButton);
+		deleteButton.click();
+		log.info("Clicked on delete button");
+		selenium.Wait.explicit(driver, deleteConfirm_popup);
+		deleteConfirm_popup.click();
+		log.info("Clicked on delete confirmation ok button");
+		
+	}
+	
+	public void ChangeShippingMethod(String changeShippingMethod) {
+		selenium.Wait.explicit(driver, SelectShippingMethod_CartPage);
+		SelectShippingMethod_CartPage.click();
+
+		if(changeShippingMethod.equalsIgnoreCase("Ship to Retailer"))
+		{
+			selenium.Wait.explicit(driver, SelectShiptoRetailer_CartPageShippingmethod);
+			SelectShiptoRetailer_CartPageShippingmethod.click();
+			log.info("Changed the shipping method" +changeShippingMethod);
+		}
+		else if(changeShippingMethod.equalsIgnoreCase("Stock Reserve"))
+		{	
+			selenium.Wait.explicit(driver, SelectStockReserve_CartPageShippingmethod);
+			SelectStockReserve_CartPageShippingmethod.click();
+			log.info("Changed the shipping method" +changeShippingMethod);
+		}
+		else
+		{
+			log.error("correct Shipping method not selected");
+		}
+
+	}
+
+
+	public void switchTomainwindow() throws InterruptedException 
+	{
+		driver.close();
+		Thread.sleep(3000);
+		Set<String> windowhandle=driver.getWindowHandles();
+		Iterator<String> iter=windowhandle.iterator();
+		String mainWindow=iter.next();
+		System.out.println("mainWindow"+ mainWindow);
+		driver.switchTo().window(mainWindow);
+	}
+
+
+	public void verifyWebTableSkusInBasket(String skuCount) {
+		// TODO Auto-generated method stub
+		String beforeXpath="//*[contains(@class,'rgMasterTable')]/tbody/tr[";
+		String afterXpath="]/td[2]";		
+		String createdBasketName="Automate12";
+		for(int i=2;i<5;i++)
+		{
+			String actualXpath=beforeXpath+i+afterXpath;
+			WebElement element=driver.findElement(By.xpath(actualXpath));			
+			if(element.getText().contains(createdBasketName))
+			{
+				log.info("Created basket is present");	
+				String ActualSkuCount= driver.findElement(By.xpath("//*[contains(@class,'rgMasterTable')]/tbody/tr["+i+"]/td[4]")).getText();			
+
+				if(ActualSkuCount.equalsIgnoreCase(skuCount))
+				{
+					log.info("Sku added in the basket is verified");
+				}
+				else
+				{
+					log.error("Sku added in the basket is not show as expected");
+				}
+
+				break;
+			}
+			else
+			{
+				log.error("Created basket is not present");
+			}
+		}
+
+
 	}
 }
 
